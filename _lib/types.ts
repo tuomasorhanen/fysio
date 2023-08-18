@@ -67,7 +67,7 @@ export type ICallToAction = {
 export type IUiElement = {
   _key: string;
   _type: 'uiElement';
-  style: 'wave';
+  style: 'wave' | 'wave-two';
 };
 
 export type ISanityImage = {

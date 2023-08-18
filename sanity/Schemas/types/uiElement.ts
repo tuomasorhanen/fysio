@@ -16,6 +16,7 @@ const uiElement = defineField({
       options: {
         list: [
           { title: 'wave', value: 'wave' },
+          { title: 'wave-two', value: 'wave-two' },
         ],
         validation: Rule => [Rule.required().error('A style is required.')],
       },

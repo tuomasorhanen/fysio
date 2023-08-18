@@ -32,7 +32,7 @@ const HeroSection = (props: IHero) => {
       return (
         <div
           key={`${props._key}-image-bg-center`}
-          className="relative flex w-full items-center justify-center h-[300px] sm:h-[400px] md:h-[500px]"
+          className="relative flex w-full items-center justify-center h-[300px] sm:h-[400px] md:h-[500px] bg-accent"
           style={bgColorStyle}>
           <div className="absolute left-0 top-0 z-10 h-full w-full">
             {image && <Image {...image} className="h-full w-full object-cover" alt="" opacity={opacity} />}

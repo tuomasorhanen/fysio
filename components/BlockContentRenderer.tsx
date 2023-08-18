@@ -46,7 +46,7 @@ const BlockContentRenderer = ({ blockContent }) => {
         return <YouTube videoId={videoId} className="max-w-screen flex aspect-video justify-start py-4" />;
       },
       image: ({ node }) => {
-        return <img src={urlFor(node).url()} alt={node.alt} style={{ maxWidth: '100%', height: 'auto' }} />;
+        return <img className='rounded-lg shadow-md shadow-gray-500 w-2/3 h-1/2 my-8' src={urlFor(node).url()} alt={node.alt} style={{ maxWidth: '100%', height: 'auto' }} />;
       },
     },
   };

@@ -35,7 +35,6 @@ const IndexPage = (props: IPageProps) => {
       </Head>
       <Header items={menu} settings={settings} heroBgColor={heroBgColor} key={heroBgColor} />
       <MapContent content={content} />
-      <SocialButtons />
       <Footer />
       <style jsx global>{`
         :root {
