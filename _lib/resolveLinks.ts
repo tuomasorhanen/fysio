@@ -9,9 +9,6 @@ const resolveUrl = navResult => {
     case 'page':
       navigateToPage = `${navResult.slug.current}`;
       break;
-    case 'blog':
-      navigateToPage = `/blog/${navResult.slug.current}`;
-      break;
     default:
       break;
   }
@@ -84,13 +81,13 @@ const resolveLinks = async page => {
   for (let i = 0; i < page.content.length; i++) {
     let cnt = page.content[i];
 
-    if (cnt._type == 'hero' || cnt._type == 'customButton') {
+    if (cnt._type == 'hero' || cnt._type == 'customButton' || cnt._type == 'post') {
       cnt = await processButtons(cnt);
       page.content[i] = cnt;
     } else if (cnt._type == 'grid') {
       for (let k = 0; k < cnt.items.length; k++) {
         let item = cnt.items[k];
-        if (item._type == 'card' || item._type == 'hero') {
+        if (item._type == 'card') {
           item = await processButtons(item);
           cnt.items[k] = item;
         }

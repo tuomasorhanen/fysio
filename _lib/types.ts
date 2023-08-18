@@ -24,7 +24,7 @@ export type IPage = {
   _type: 'page';
   name: string;
   menuOrder?: number;
-  content?: IHeadingAndTitle[] | IHero[] | IGrid[] | IUiElement[] | IPerson[] | IService[];
+  content?: IHeadingAndTitle[] | IHero[] | IGrid[] | IUiElement[] | IService[] | IPost[];
 };
 
 export type IService = {
@@ -117,7 +117,7 @@ export type IGrid = {
   _key: string;
   title: string;
   columns: IColumns;
-  items: ICard[];
+  items: ICard[] | IService[] | IPost[];
 };
 
 export type IColumns = {
@@ -140,38 +140,14 @@ export type IPost = {
   _key: string;
   title: string;
   slug: ISlug;
-  person: IPerson;
   mainImage: ISanityImage;
-  categories: ICategory[];
-  excerpt: string;
-  publishedAt: string;
-  readingTime: string;
-  blockContent?: any;
-};
-
-export type IPerson = {
-  _id: string;
-  _type: 'person';
-  name: string;
-  role: string;
-  image: ISanityImage;
-  number?: string;
-  email?: string;
-};
-
-export type ICategory = {
-  _key: string;
-  _ref: string;
-  _id: string;
-  _type: 'category';
-  name: string;
-  description?: string;
+  description: string;
 };
 
 export type IReference = {
   _id: string;
   _ref: string;
-  _type: 'post';
+  _type: string;
 };
 
 export type ISlug = {

@@ -22,10 +22,7 @@ module.exports = {
         DEFAULT: 'var(--accent-color)',
       },
     },
-    fontFamily: {
-      heading: ['Roboto Slab', 'serif'],
-      body: ['Open Sans', 'sans-serif'],
-    },
+
     screens: {
       sm: '700px', //tablet
       md: '1100px', //small desktop or laptop

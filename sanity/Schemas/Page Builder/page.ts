@@ -80,9 +80,16 @@ const Page = {
         { type: 'spacer' },
         { type: 'pricing' }, 
         {
+          name: 'service',
           type: 'reference',
-          to: [{ type: 'service' }]
-        },     ],
+          to: [{ type: 'service' },],
+        },
+        {
+          name: 'post',
+          type: 'reference',
+          to: [{ type: 'post' },],
+        },
+   ],
     }),
   ],
   orderings: [

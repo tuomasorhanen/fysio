@@ -2,26 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins:wght@400;700&family=Sora:wght@100;200;300;400;500&display=swap');
 @layer base {
+  body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
   body {
     @apply bg-bg text-text font-extralight;
-    font-family: 'Open Sans', sans-serif;
+  }
+  
+  h1, h2, h3 {
+    font-weight: 700; 
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'Roboto Slab', serif;
+   h4, h5, h6 {
+    font-weight: 400;
   }
 }
 @layer components {
   .button {
-    @apply relative mx-2 inline-block rounded-full px-2 py-2 text-xs shadow-xl hover:scale-105 sm:px-4 sm:text-xl;
+    @apply relative mx-2 inline-block rounded-full px-2 py-2 text-xs shadow-gray-500 shadow-md hover:scale-105 sm:px-4 sm:text-xl;
     background-color: var(--button-bg-color, var(--bg-color));
     color: var(--button-text-color, var(--text-color));
     border: 2px solid var(--bg-color);

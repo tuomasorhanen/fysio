@@ -30,7 +30,7 @@ const resolveReferences = async (page: IPage) => {
                     ...
                   }[0]`;
                   const serviceData = await client.fetch(serviceQry);
-                  return { ...serviceData }; // Update to return serviceData directly
+                  return { ...serviceData };
                 }
                 return service;
               })
@@ -41,47 +41,7 @@ const resolveReferences = async (page: IPage) => {
           item.items = await Promise.all(
             item.items.map(async (gridItem: any) => {
               const { _ref, _type } = gridItem;
-
-              if (gridItem._type === 'blog' && _ref) {
-                const blogQry = groq`*[_id == '${_ref}']{
-                  _id,
-                  title,
-                  excerpt,
-                  mainImage,
-                  slug,
-                  person,
-                  ...
-                }[0]`;
-                const blogData = await client.fetch(blogQry);
-
-                // Fetch person data separately
-                if (blogData.person && blogData.person._ref) {
-                  const personQry = groq`*[_id == '${blogData.person._ref}']{
-                    _id,
-                    name,
-                    role,
-                    image,
-                    _type,
-                    email,
-                    number
-                  }[0]`;
-                  const personData = await client.fetch(personQry);
-                  blogData.person = personData;
-                }
-                return blogData;
-              } else if (gridItem._type === 'person' && _ref) {
-                const personQry = groq`*[_id == '${_ref}']{
-                  _id,
-                  name,
-                  role,
-                  image,
-                  _type,
-                  email,
-                    number
-                }[0]`;
-                const personData = await client.fetch(personQry);
-                return personData;
-              } else if (_type === 'service' && _ref) {
+              if (_type === 'service' && _ref) {
                 const serviceQry = groq`*[_id == '${_ref}']{
           _id,
           title,
@@ -96,28 +56,30 @@ const resolveReferences = async (page: IPage) => {
                 const serviceData = await client.fetch(serviceQry);
 
                 return serviceData;
-              } else {
+              }
+              else if (_type === 'post' && _ref) {
+                const postQry = groq`*[_id == '${_ref}']{
+          _id,
+          title,
+                  
+          description,
+          mainImage,
+          slug,
+          _type,
+          ...
+        }[0]`;
+                const postData = await client.fetch(postQry);
+
+                return postData;
+              }
+              else {
                 return gridItem;
               }
             })
           );
           break;
-        case 'blog':
-          if (item.person && item.person._ref) {
-            const personQry = groq`*[_id == '${item.person._ref}']{
-              _id,
-              name,
-              role,
-              image,
-            }[0]`;
-            const personData = await client.fetch(personQry);
-            item.person = personData;
-          }
-          break;
-        case 'person':
-          break;
-          case 'reference':
-          if (item._ref) {
+        case 'reference':
+          if (item._ref && item._type === 'service') {
             const serviceQry = groq`*[_id == '${item._ref}']{
               _id,
               title,
@@ -133,6 +95,21 @@ const resolveReferences = async (page: IPage) => {
             return serviceData;
           }
           break;
+          case 'post' :
+            if (item._ref && item._type === 'post') {
+              const postQry = groq`*[_id == '${item._ref}']{
+                _id,
+                title,
+                description,
+                mainImage,
+                slug,
+                _type,
+                ...
+              }[0]`;
+              const postData = await client.fetch(postQry);
+              return postData;
+            }
+
         default:
           break;
       }

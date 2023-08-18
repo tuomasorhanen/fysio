@@ -1,11 +1,10 @@
-import Link from 'next/link';
-import { IService } from '../../_lib/types';
+import ButtonRenderer from 'components/ButtonRenderer';
+import { IPost,} from '../../_lib/types';
 import Image from '../../components/Image';
 import BlockContentRenderer from 'components/BlockContentRenderer';
 
-const Service = (props: IService) => {
-  const { description, title, slug, duration, mainImage, _type, price, _key, _id } = props;
-console.log(props)
+const Post = (props: IPost) => {
+  const { description, title, slug, mainImage, _type,  _key,} = props;
   return (
     <>
      <div
@@ -29,26 +28,13 @@ console.log(props)
           </svg>
         </div>
     <div key={props._key} className="max-w-4xl mx-auto">
-    <div className="pb-4 flex justify-center">
-          {Array.isArray(price) && Array.isArray(duration) && price.map((p, index) => (
-            <div key={props._id && index} className="shadow-lg border-accent border rounded-lg p-2 text-center mx-4 flex justify-between">
-              <div>
-                <p className="font-bold mx-4">{duration[index]} min</p>
-              </div>
-              <div>
-                <p className="font-bold mx-4">{p} €</p>
-              </div>
-            </div>
-          ))}
-        </div>
 
       <div className="p-4 pb-16">
       <BlockContentRenderer blockContent={description && description} />
-
       </div>
     </div>
     </>
   );
 };
 
-export default Service;
+export default Post;

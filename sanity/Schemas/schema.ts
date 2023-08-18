@@ -2,9 +2,6 @@ import { SchemaTypeDefinition } from 'sanity';
 import Page from './Page Builder/page';
 import LandingPage from './Page Builder/landingPage';
 import siteSettings from './Site Settings/siteSettings';
-import post from './Blog/post';
-import person from './Blog/person';
-import category from './Blog/category';
 import blockContent from './types/block-content';
 import Card from './types/card';
 import columns from './types/columns';
@@ -17,6 +14,7 @@ import spacer from './types/spacer';
 import textContent from './types/textContent';
 import pricing from './types/pricing';
 import service from './Service/service';
+import post from './Post/post';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -24,10 +22,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     Page,
     LandingPage,
     siteSettings,
-    post,
-    person,
-    category,
     service,
+    post,
 
     //Objects
     textContent,

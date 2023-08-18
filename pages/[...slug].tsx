@@ -8,7 +8,6 @@ import resolveReferences from '../_lib/resolvers/resolveReferences';
 import { IHeadingAndTitle, IHero, IPost, IService, ISiteSettings } from '../_lib/types';
 import Header, { IMenuItem } from '../components/header/Header';
 import MapContent from '../components/MapContent';
-import SocialButtons from 'components/social buttons/SocialButtons';
 import Footer from 'components/footer/Footer';
 
 type IPageProps = {
@@ -16,7 +15,6 @@ type IPageProps = {
   title: string;
   description: string;
   content: IHero[] | IHeadingAndTitle[] | IService[];
-  blogs: IPost[];
   menu: IMenuItem[];
   settings: ISiteSettings;
 };
@@ -63,9 +61,6 @@ export const getServerSideProps: GetServerSideProps<IPageProps> = async context 
       notFound: true,
     };
   }
-  const blogsQuery = groq`
-    *[_type == 'post']
-  `;
 
   const menuQuery = groq`
   *[_type == 'page' && defined(menuOrder)]{
@@ -78,8 +73,7 @@ export const getServerSideProps: GetServerSideProps<IPageProps> = async context 
   *[_type == 'siteSettings'][0]
 `;
 
-  let [blogsResponse, menuResponse, siteSettingsResponse] = await Promise.all([
-    client.fetch(blogsQuery),
+  let [menuResponse, siteSettingsResponse] = await Promise.all([
     client.fetch<IMenuItem[]>(menuQuery),
     client.fetch(siteSettingsQuery),
   ]);
@@ -95,7 +89,6 @@ export const getServerSideProps: GetServerSideProps<IPageProps> = async context 
       title,
       description,
       content: pageResponse.content,
-      blogs: blogsResponse,
       menu: menuResponse,
       settings: siteSettingsResponse,
     },

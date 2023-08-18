@@ -45,19 +45,14 @@ const grid = defineField({
       of: [
         { type: 'card' },
         {
-          name: 'blog',
-          type: 'reference',
-          to: [{ type: 'post' }],
-        },
-        {
-          name: 'person',
-          type: 'reference',
-          to: [{ type: 'person' }],
-        },
-        {
           name: 'service',
           type: 'reference',
           to: [{ type: 'service' }],
+        },
+        {
+          name: 'post',
+          type: 'reference',
+          to: [{ type: 'post' }],
         }
       ],
     },

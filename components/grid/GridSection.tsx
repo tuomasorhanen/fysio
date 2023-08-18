@@ -1,23 +1,19 @@
 import { useEffect, useState } from 'react';
-import { ICard, IGrid, IPerson, IPost, IService } from '../../_lib/types';
-import BlogReferenceSection from '../../components/blog/BlogReferenceSection';
+import { ICard, IGrid, IPost, IService } from '../../_lib/types';
 import Card from './Card';
-import PersonReferenceSection from './PersonReference';
 import ServiceReferenceSection from 'components/service/serviceReference';
+import PostReferenceSection from 'components/post/postReference';
 
 interface GridSectionProps extends IGrid {}
 
 const CardItem = (item: ICard) => {
   return <Card {...item} />;
 };
-const PostItem = (item: IPost) => {
-  return <BlogReferenceSection {...item} />;
-};
-const PersonItem = (item: IPerson) => {
-  return <PersonReferenceSection {...item} />;
-};
 const ServiceItem = (item: IService) => {
   return <ServiceReferenceSection {...item} />;
+}
+const PostItem = (item: IPost) => {
+  return <PostReferenceSection {...item} />;
 }
 
 const GridSection = (props: GridSectionProps) => {
@@ -53,15 +49,14 @@ const GridSection = (props: GridSectionProps) => {
 
   const itemsArray = Array.isArray(items) ? items : [items];
 
-  const renderGridItem = (item: ICard | IPost | IPerson | IService) => {
+  const renderGridItem = (item: ICard | IPost | IService) => {
     if (item._type === 'card') {
       return CardItem(item as ICard);
-    } else if (item._type === 'post') {
-      return PostItem(item as IPost);
-    } else if (item._type === 'person') {
-      return PersonItem(item as IPerson);
     } else if (item._type === 'service') {
       return ServiceItem(item as IService);
+    }
+    else if (item._type === 'post') {
+      return PostItem(item as IPost);
     }
     else {
       return <>Empty grid</>;
@@ -71,9 +66,10 @@ const GridSection = (props: GridSectionProps) => {
   return (
     <section>
       <div key={props._key} className="mx-auto grid max-w-7xl gap-8 px-2 sm:px-4 md:px-8" style={columnStyles}>
-        {itemsArray.map(item => (
-          <div key={item._key}>{renderGridItem(item)}</div>
-        ))}
+      {itemsArray.map((item, index) => (
+  <div key={`${item._key}-${index}`}>{renderGridItem(item)}</div>
+))}
+
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import GridSection from './grid/GridSection';
 import HeadingAndTitle from './headingandTitle/HeadingAndTitle';
 import HeroSection from './hero/HeroSection';
 import CustomButton from './landingPage/CustomButton';
+import Post from './post/post';
 import Pricing from './price';
 import Service from './service/Service';
 import Spacer from './Spacer';
@@ -33,6 +34,8 @@ const MapContent = ({ content }: IMapContentProps) => {
               return <Pricing key={item._key} {...item} />;
             case 'service':
               return <Service key={item._key} {...item} />;
+              case 'post':
+                return <Post key={item._key} {...item} />;
           default:
             break;
         }
