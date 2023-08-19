@@ -8,7 +8,7 @@ const Card = (props: ICard) => {
 
   const CardContent = () => (
     <>
-      {image && <Image {...image} alt="" className="z-50 mx-auto h-28 w-28 rounded-full object-cover shadow-lg" />}
+      {image && <Image source={image} width={112} aspect={1/1} alt="" className="z-50 mx-auto rounded-full object-cover shadow-lg" />}
       <figure className="z-10 -mt-16 flex-grow rounded-lg shadow-lg">
         <div className="mx-auto h-full p-4 pt-20 text-center">
           <BlockContentRenderer blockContent={blockContent && blockContent} />

@@ -7,7 +7,7 @@ const ServiceReferenceSection = (props: IService) => {
 
   return (
     <section key={_key} className="borderstyle rounded-lg shadow-lg overflow-hidden relative">
-      <Image {...mainImage} alt="" className="h-48 w-full object-cover" />
+      {mainImage && <Image source={mainImage} width={590} aspect={5 / 2} className="w-full object-cover" alt="" />}
       <div className="absolute top-0 right-0 p-2 font-extrabold flex flex-col gap-2">
         {Array.isArray(price) && Array.isArray(duration) && price.map((p, index) => (
           <div key={_key && index} className="p-2 rounded-lg bg-white opacity-70">

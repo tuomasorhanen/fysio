@@ -11,7 +11,7 @@ const Post = (props: IPost) => {
           key={`${props._key}-image-bg-center`}
           className="relative flex aspect-square max-h-screen w-full items-center justify-center sm:h-[700px] bg-black">
           <div className="absolute left-0 top-0 z-10 h-full w-full">
-            {mainImage && <Image {...mainImage} className="h-full w-full object-cover opacity-50" alt="" />}
+            {mainImage && <Image source={mainImage} width={1425} aspect={16/9} className="h-full w-full object-cover opacity-50" alt="" />}
           </div>
           <div className="absolute left-0 top-0 z-20 h-full w-full "></div>
           <div className="z-30 max-w-3xl px-4 pb-2 font-heading text-3xl sm:text-4xl md:text-5xl text-center text-white">{title}

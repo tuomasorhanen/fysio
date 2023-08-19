@@ -56,7 +56,7 @@ const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
   className={`fixed top-0 z-40 hidden w-full md:block ${navBackground} duration-800 transition delay-300 ease-in-out`}>
   <div className="flex justify-between py-2">
     <Link href="/" className="z-40 flex items-center">
-      <Image {...settings.logo} alt={settings.title} className="mx-10 rounded-full max-h-12 w-12 object-contain hover:scale-105" />
+      <Image source={settings.logo} width={50} alt={settings.title} aspect={1/1} className="mx-10 rounded-full object-contain hover:scale-105" />
       <span className='-ml-6 text-xl'>Fysiosarianne</span>
     </Link>
     <div className="z-40 hidden md:block" id="navbar-default">
@@ -84,7 +84,7 @@ const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
       <div className="nav-container">
         <div className="navbar absolute z-50">
           <Link href="/" className="z-40 flex items-center">
-            <Image {...settings.logo} alt={settings.title} className=" max-h-12 w-12 rounded-full object-contain" />
+          <Image source={settings.logo} width={50} aspect={1/1} alt={settings.title} className="mx-10 rounded-full  object-contain hover:scale-105" />
           </Link>{' '}
           <div className="menu-toggle" onClick={() => setNavOpen(!navOpen)}>
             <div className={navOpen ? 'hamBox hamBoxOpen' : 'hamBox'}>

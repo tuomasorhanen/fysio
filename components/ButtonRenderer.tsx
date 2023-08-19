@@ -45,7 +45,7 @@ const ButtonRenderer = (props: ICallToAction) => {
     return (
       <Link href={navigateToPage || '/etusivu'}>
         {image ? (
-          <Image {...image} alt="" className={`mx-2 h-12 w-12 object-cover hover:scale-105`} />
+          <Image source={image} width={50} aspect={1/1} alt="" className={`mx-2 object-cover hover:scale-105`} />
         ) : (
           <span className={`button`} style={buttonStyle}>
             {callToAction}
@@ -57,7 +57,7 @@ const ButtonRenderer = (props: ICallToAction) => {
     return (
       <a href={navigateToUrl} >
         {image ? (
-          <Image {...image} alt="" className={`mx-2 h-12 w-12 object-cover hover:scale-105`} />
+          <Image source={image} width={50} aspect={1/1} alt="" className={`mx-2 object-cover hover:scale-105`} />
         ) : (
           <span className={`button`} style={buttonStyle}>
             {callToAction}
