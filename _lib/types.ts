@@ -132,7 +132,7 @@ export type IHeadingAndTitle = {
   _type: string;
   _key: string;
   blockContent: any;
-  style: 'centered';
+  style: 'centered' | 'left-aligned';
 };
 
 export type IPost = {

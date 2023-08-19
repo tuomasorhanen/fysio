@@ -30,7 +30,6 @@ export default class DynamicImage {
 
     let urlBuilder = this._builder.image(this._source).auto('format').width(parseInt(this._width.toFixed())).height(this._height).fit('crop');
 
-    // If lowRes is true, reduce the quality to create a blurry effect
     if (lowRes) {
       urlBuilder = urlBuilder.quality(20); // Adjust the quality value as needed
     }

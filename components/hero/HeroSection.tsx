@@ -59,8 +59,8 @@ const HeroSection = (props: IHero) => {
                 {buttons && buttons.map(btn => <ButtonRenderer key={`${layout}-${btn.callToAction}`} {...btn} />)}
               </div>
             </div>
-            <div className="hidden md:block">
-              {image && <Image source={image} width={650} aspect={2/3} className="rounded-lg shadow-lg object-cover" alt="" opacity={imageOpacity}  />}
+            <div className="hidden md:flex justify-center">
+              {image && <Image source={image} width={450} className="h-2/3 rounded-lg shadow-gray-500 shadow-md object-cover" alt=""  />}
             </div>
           </div>
         </section>

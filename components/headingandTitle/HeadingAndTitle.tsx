@@ -15,6 +15,14 @@ const HeadingAndTitle = (props: IHeadingAndTitle) => {
           </div>
         </div>
       );
+    case 'left-aligned':
+      return (
+        <div key={props._key} className="py-8 md:py-16 ">
+          <div className="mx-auto max-w-4xl px-4">
+            <BlockContentRenderer blockContent={blockContent && blockContent} />
+          </div>
+        </div>
+      );
     default:
       return <></>;
   }

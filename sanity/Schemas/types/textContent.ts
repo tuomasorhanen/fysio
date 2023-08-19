@@ -21,6 +21,7 @@ const textContent = defineField({
       options: {
         list: [
           { title: 'centered', value: 'centered' },
+          { title: 'left-aligned', value: 'left-aligned' },
         ],
         validation: Rule => [Rule.required().error('A style is required.')],
       },
