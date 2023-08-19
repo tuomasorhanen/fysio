@@ -50,16 +50,6 @@ const HeroSection = (props: IHero) => {
       return (
         <section className="relative md:py-16" style={bgColorStyle}>
           <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-8 md:grid-cols-2 lg:py-16">
-            <div className="md:hidden">
-              {image && (
-                <Image
-                  {...image}
-                  className="mx-auto pt-12 max-w-sm object-cover h-full w-full"
-                  alt=""
-                  opacity={opacity}
-                />
-              )}
-            </div>
             <div
               className="flex flex-col items-center justify-center text-center md:items-start md:text-left"
               style={textColorStyle}>
