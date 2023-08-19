@@ -27,13 +27,16 @@ export default class DynamicImage {
     if (!this._source) {
       return `data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${this._width} ${this._height}"%3E%3C/svg%3E`;
     }
-
+  
     let urlBuilder = this._builder.image(this._source).auto('format').width(parseInt(this._width.toFixed())).height(this._height).fit('crop');
-
+  
     if (lowRes) {
-      urlBuilder = urlBuilder.quality(20); // Adjust the quality value as needed
+      urlBuilder = urlBuilder.quality(20); // Low quality for low-res image
+    } else {
+      urlBuilder = urlBuilder.quality(100); // Higher quality for high-res image
     }
-
+  
     return urlBuilder.url();
   }
+  
 }
