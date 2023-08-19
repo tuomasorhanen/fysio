@@ -60,7 +60,7 @@ const HeroSection = (props: IHero) => {
               </div>
             </div>
             <div className="hidden md:block">
-              {image && <Image source={image} width={500} className="rounded-lg shadow-lg h-full w-full object-cover" alt="" opacity={imageOpacity}  />}
+              {image && <Image source={image} width={650} aspect={2/3} className="rounded-lg shadow-lg object-cover" alt="" opacity={imageOpacity}  />}
             </div>
           </div>
         </section>
