@@ -84,7 +84,7 @@ const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
       <div className="nav-container">
         <div className="navbar absolute z-50">
           <Link href="/" className="z-40 flex items-center">
-          <Image source={settings.logo} width={50} aspect={1/1} alt={settings.title} className="mx-10 rounded-full  object-contain hover:scale-105" />
+          <Image source={settings.logo} width={50} aspect={1/1} alt={settings.title} className="rounded-full object-contain hover:scale-105" />
           </Link>{' '}
           <div className="menu-toggle" onClick={() => setNavOpen(!navOpen)}>
             <div className={navOpen ? 'hamBox hamBoxOpen' : 'hamBox'}>
