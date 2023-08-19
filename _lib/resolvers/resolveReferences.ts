@@ -78,23 +78,6 @@ const resolveReferences = async (page: IPage) => {
             })
           );
           break;
-        case 'reference':
-          if (item._ref && item._type === 'service') {
-            const serviceQry = groq`*[_id == '${item._ref}']{
-              _id,
-              title,
-              description,
-              price,
-              duration,
-              mainImage,
-              slug,
-              _type,
-              ...
-            }[0]`;
-            const serviceData = await client.fetch(serviceQry);
-            return serviceData;
-          }
-          break;
           case 'post' :
             if (item._ref && item._type === 'post') {
               const postQry = groq`*[_id == '${item._ref}']{
@@ -109,6 +92,23 @@ const resolveReferences = async (page: IPage) => {
               const postData = await client.fetch(postQry);
               return postData;
             }
+
+            case 'service' :
+              if (item._ref && item._type === 'service') {
+                const serviceQry = groq`*[_id == '${item._ref}']{
+                  _id,
+                  title,
+                  description,
+                  price,
+                  duration,
+                  mainImage,
+                  slug,
+                  _type,
+                  ...
+                }[0]`;
+                const serviceData = await client.fetch(serviceQry);
+                return serviceData;
+              }
 
         default:
           break;

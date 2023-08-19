@@ -1,11 +1,9 @@
-import Link from 'next/link';
 import { IService } from '../../_lib/types';
 import Image from '../../components/Image';
 import BlockContentRenderer from 'components/BlockContentRenderer';
 
 const Service = (props: IService) => {
   const { description, title, slug, duration, mainImage, _type, price, _key, _id } = props;
-console.log(props)
   return (
     <>
      <div

@@ -5,7 +5,7 @@ const MyFooter = () => {
       <div className="mx-auto max-w-5xl px-4 py-8 text-center bg-bg text-text">
         <div className="grid grid-cols-1 sm:grid-cols-3 pb-8 border-b-2 border-accent ">
           <div className='mb-4'>
-            <h3 className="text-lg font-bold "><FaMapMarkerAlt className="inline-block mr-2" />Lielahti</h3>
+            <h3 className="text-lg font-bold "><FaMapMarkerAlt className="inline-block mr-2" />Tampere Lielahti</h3>
             <p>Kauppakeskus Like</p>
             <p>Antti Possin kuja 1</p>
           </div>
@@ -15,7 +15,7 @@ const MyFooter = () => {
             <p>Saapastie 2</p>
           </div>
           <div className='mb-4'>
-            <h3 className="text-lg font-bold"><FaMapMarkerAlt className="inline-block mr-2" />Keskusta</h3>
+            <h3 className="text-lg font-bold"><FaMapMarkerAlt className="inline-block mr-2" />Tampere Keskusta</h3>
             <p>Näsilinnankatu 46</p>
           </div>
           </div>
