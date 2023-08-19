@@ -12,7 +12,7 @@ type IImgProps = {
 };
 
 const generateSrcSet = (props, format) => {
-  const sizes = [320, 640, 960, 1280, 1600];
+  const sizes = [320, 700, 1100, 1920];
   return sizes.map(size => `${urlFor(props).width(size).quality(100).auto('format').format(format).url()} ${size}w`).join(', ');
 };
 
@@ -43,6 +43,7 @@ const Image = (props: ISanityImage & IImgProps) => {
         className={className}
         alt={alt || ''}
         style={imageStyles}
+        loading="lazy"
       />
     </picture>
   );
