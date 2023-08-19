@@ -26,7 +26,7 @@ const MyFooter = () => {
           </div>
           <div className='mx-8 mb-4'>
             <h3 className="text-lg font-bold "><FaEnvelope className="inline-block mr-2" />Sähköposti</h3>
-            <p>sarianne@gmail.com</p>
+            <p>sari_anne_@hotmail.com</p>
           </div>
         </div>
       </div>

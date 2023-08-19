@@ -27,17 +27,14 @@ const Service = (props: IService) => {
           </svg>
         </div>
     <div key={props._key} className="max-w-4xl mx-auto">
-    <div className="pb-4 flex justify-center">
-          {Array.isArray(price) && Array.isArray(duration) && price.map((p, index) => (
-            <div key={props._id && index} className="shadow-lg border-accent border rounded-lg p-2 text-center mx-4 flex justify-between">
-              <div>
-                <p className="font-bold mx-4">{duration[index]} min</p>
-              </div>
-              <div>
-                <p className="font-bold mx-4">{p} €</p>
-              </div>
-            </div>
-          ))}
+    <div className="pb-4 flex justify-center ">
+    {Array.isArray(price) && Array.isArray(duration) && price.map((p, index) => (
+          <div key={_key && index} className="p-2 rounded-lg mx-4 font-bold shadow-gray-500 shadow-md bg-white">
+                        <p>{duration[index]} min</p>
+
+            <p>{p} €</p>
+          </div>
+        ))}
         </div>
 
       <div className="p-4 pb-16">
