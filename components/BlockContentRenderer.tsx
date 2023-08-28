@@ -14,6 +14,7 @@ const builder = imageUrlBuilder({
 const urlFor = source => builder.image(source);
 
 const BlockContentRenderer = ({ blockContent }) => {
+
   const serializers = {
     types: {
       block: props => {
@@ -35,7 +36,7 @@ const BlockContentRenderer = ({ blockContent }) => {
           case 'h5':
             return <h5 className="pb-2 text-xl">{props.children}</h5>;
           case 'h6':
-            return <h6 className="pb-2 text-lg">{props.children}</h6>;
+            return <h6 className="pb-2">{props.children}</h6>;
           default:
             return <p className="pb-2">{props.children}</p>;
         }
@@ -47,6 +48,22 @@ const BlockContentRenderer = ({ blockContent }) => {
       },
       image: ({ node }) => {
         return <img className='rounded-lg shadow-md shadow-gray-500 w-2/3 h-1/2 my-8' src={urlFor(node).url()} alt={node.alt} style={{ maxWidth: '100%', height: 'auto' }} />;
+      },
+    },
+    marks: {
+      link: ({ mark, children }) => {
+        // Check if the href starts with 'http://' or 'https://'
+        const isExternal = /^(https?:\/\/)/.test(mark.href);
+        return (
+          <a
+            href={mark.href}
+            target={isExternal ? "_blank" : "_self"}
+            rel={isExternal ? "noopener noreferrer" : ""}
+            className="text-blue-500 hover:underline"
+          >
+            {children}
+          </a>
+        );
       },
     },
   };

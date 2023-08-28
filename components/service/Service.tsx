@@ -3,7 +3,7 @@ import Image from '../../components/Image';
 import BlockContentRenderer from 'components/BlockContentRenderer';
 
 const Service = (props: IService) => {
-  const { description, title, slug, duration, mainImage, _type, price, _key, _id } = props;
+  const { description, title, slug, duration, mainImage, _type, price, _key, _id, specification } = props;
   return (
     <>
      <div
@@ -27,11 +27,11 @@ const Service = (props: IService) => {
           </svg>
         </div>
     <div key={props._key} className="max-w-4xl mx-auto">
-    <div className="pb-4 flex justify-center ">
-    {Array.isArray(price) && Array.isArray(duration) && price.map((p, index) => (
-          <div key={_key && index} className="p-2 rounded-lg mx-4 font-bold shadow-gray-500 shadow-md bg-white">
-                        <p>{duration[index]} min</p>
-
+    <div className="pb-4 flex justify-center gap-4 font-extrabold ">
+      {Array.isArray(price) && Array.isArray(duration) && price.map((p, index) => (
+          <div key={_key && index} className="p-2 rounded-lg bg-white opacity-70">
+            {specification && <p className='text-sm font-light'>{specification[index]}</p>}
+            <p>{duration[index]} min</p>
             <p>{p} €</p>
           </div>
         ))}

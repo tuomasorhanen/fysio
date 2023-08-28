@@ -45,6 +45,13 @@ export default defineType({
             of: [ {type: 'number'}],
         }),
         defineField({
+            name: 'specification',
+            title: 'Specification',
+            description: 'Add a specification related to price and duration for your service.',
+            type: 'array',
+            of: [ {type: 'string'}],
+        }),
+        defineField({
             name: 'mainImage',
             title: 'Main image',
             description: 'This image will be shown in the preview card for your service.',

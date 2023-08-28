@@ -3,16 +3,16 @@ import { IService } from '../../_lib/types';
 import Image from '../../components/Image';
 
 const ServiceReferenceSection = (props: IService) => {
-  const {title, slug, duration, mainImage, price, _key } = props;
+  const {title, slug, duration, mainImage, price, _key, specification } = props;
 
   return (
     <section key={_key} className="borderstyle rounded-lg shadow-lg overflow-hidden relative bg-black">
       {mainImage && <Image source={mainImage} width={590} aspect={5 / 2} className="w-full object-cover" alt="" opacity={0.5} />}
-      <div className="absolute top-0 right-0 p-2 font-extrabold flex flex-col gap-2">
-        {Array.isArray(price) && Array.isArray(duration) && price.map((p, index) => (
+      <div className="absolute top-0 right-0 p-2 font-extrabold flex flex-wrap gap-2">
+      {Array.isArray(price) && Array.isArray(duration) && price.map((p, index) => (
           <div key={_key && index} className="p-2 rounded-lg bg-white opacity-70">
-                        <p>{duration[index]} min</p>
-
+            {specification && <p className='text-sm font-light'>{specification[index]}</p>}
+            <p>{duration[index]} min</p>
             <p>{p} €</p>
           </div>
         ))}

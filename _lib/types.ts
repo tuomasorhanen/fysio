@@ -37,6 +37,7 @@ export type IService = {
   price: number;
   duration: number;
   mainImage: ISanityImage;
+  specification: string;
 };
 
 export type IPrice = {
