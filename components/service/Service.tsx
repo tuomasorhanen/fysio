@@ -30,8 +30,8 @@ const Service = (props: IService) => {
       {Array.isArray(price) && Array.isArray(duration) && price.map((p, index) => (
           <div key={_key && index} className="p-2 rounded-lg bg-white opacity-70">
             {specification && <p className='text-sm font-light'>{specification[index]}</p>}
-            <p>{duration[index]} min</p>
-            <p>{p} €</p>
+            <div>{duration[index]} min</div>
+            <div>{p} €</div>
           </div>
         ))}
         </div>

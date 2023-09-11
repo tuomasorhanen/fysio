@@ -1,14 +1,10 @@
 import { useEffect, useState } from 'react';
-import { ICard, IGrid, IPost, IService } from '../../_lib/types';
-import Card from './Card';
+import { IGrid, IPost, IService } from '../../_lib/types';
 import ServiceReferenceSection from 'components/service/serviceReference';
 import PostReferenceSection from 'components/post/postReference';
 
 interface GridSectionProps extends IGrid {}
 
-const CardItem = (item: ICard) => {
-  return <Card {...item} />;
-};
 const ServiceItem = (item: IService) => {
   return <ServiceReferenceSection {...item} />;
 }
@@ -49,10 +45,8 @@ const GridSection = (props: GridSectionProps) => {
 
   const itemsArray = Array.isArray(items) ? items : [items];
 
-  const renderGridItem = (item: ICard | IPost | IService) => {
-    if (item._type === 'card') {
-      return CardItem(item as ICard);
-    } else if (item._type === 'service') {
+  const renderGridItem = (item: IPost | IService) => {
+    if (item._type === 'service') {
       return ServiceItem(item as IService);
     }
     else if (item._type === 'post') {

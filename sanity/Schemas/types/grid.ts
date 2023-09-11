@@ -43,7 +43,6 @@ const grid = defineField({
         layout: 'grid',
       },
       of: [
-        { type: 'card' },
         {
           name: 'service',
           type: 'reference',

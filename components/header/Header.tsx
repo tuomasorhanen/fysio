@@ -1,14 +1,8 @@
 import chroma from 'chroma-js';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-
-import { ISiteSettings, ISlug } from '../../_lib/types';
+import { IMenuItem, ISiteSettings } from '../../_lib/types';
 import Image from 'next/image';
-export type IMenuItem = {
-  name: string;
-  slug: ISlug;
-  menuOrder: number;
-};
 
 type IMenuProps = {
   items: IMenuItem[];

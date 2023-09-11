@@ -2,6 +2,7 @@ import { Content } from 'components/Content';
 import { IHero } from '../../_lib/types';
 import ButtonRenderer from '../../components/ButtonRenderer';
 import Image from 'next/image';
+
 const HeroSection = (props: IHero) => {
   const { image, buttons, layout, opacity, heroBgColor, heroTextColor, content } = props;
 

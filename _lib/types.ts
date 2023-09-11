@@ -93,23 +93,27 @@ export type IHero = {
   heroBgColor?: IColor;
 };
 
-export type ICard = {
-  _id: string;
-  _key: string;
-  _type: string;
-  content: PortableTextBlock[];
-  image?: any;
-  buttons?: ICallToAction[];
-  layout: 'image-top-rounded-full';
-};
-
-
 export type IGrid = {
   _id: string;
   _key: string;
   title: string;
   columns: IColumns;
-  items: ICard[] | IService[] | IPost[];
+  items: IService[] | IPost[];
+};
+
+export type IMenuItem = {
+  name: string;
+  slug: ISlug;
+  menuOrder: number;
+};
+
+export type IPageProps = {
+  name: string;
+  title: string;
+  description: string;
+  content: IHero[] | IHeadingAndTitle[] | IService[];
+  menu: IMenuItem[];
+  settings: ISiteSettings;
 };
 
 export type IColumns = {

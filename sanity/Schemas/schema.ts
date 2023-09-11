@@ -2,7 +2,6 @@ import { SchemaTypeDefinition } from 'sanity';
 import Page from './Page Builder/page';
 import LandingPage from './Page Builder/landingPage';
 import siteSettings from './Site Settings/siteSettings';
-import Card from './types/card';
 import columns from './types/columns';
 import CustomButton from './types/customButton';
 import grid from './types/grid';
@@ -26,7 +25,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 
     //Objects
     textContent,
-    Card,
     columns,
     CustomButton,
     grid,
