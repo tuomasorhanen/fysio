@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import { ICard } from '../../_lib/types';
-import BlockContentRenderer from '../../components/BlockContentRenderer';
-import Image from '../../components/Image';
+import Image from 'next/image';
+import { Content } from 'components/Content';
 
 const Card = (props: ICard) => {
-  const { blockContent, image, layout, buttons } = props;
+  const { image, layout, buttons, content } = props;
 
   const CardContent = () => (
     <>
-      {image && <Image source={image} width={112} aspect={1/1} alt="" className="z-50 mx-auto rounded-full object-cover shadow-lg" />}
+      {image && <Image src={image.asset.url} width={112} height={112} quality={90} placeholder='blur' loading='lazy' blurDataURL={image.asset.url} alt="" className="z-50 mx-auto rounded-full object-cover shadow-lg" />}
       <figure className="z-10 -mt-16 flex-grow rounded-lg shadow-lg">
         <div className="mx-auto h-full p-4 pt-20 text-center">
-          <BlockContentRenderer blockContent={blockContent && blockContent} />
+        <Content content={content} />
         </div>
       </figure>
     </>

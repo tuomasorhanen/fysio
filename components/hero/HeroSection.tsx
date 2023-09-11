@@ -1,10 +1,9 @@
+import { Content } from 'components/Content';
 import { IHero } from '../../_lib/types';
-import BlockContentRenderer from '../../components/BlockContentRenderer';
 import ButtonRenderer from '../../components/ButtonRenderer';
-import Image from '../../components/Image';
-
+import Image from 'next/image';
 const HeroSection = (props: IHero) => {
-  const { blockContent, image, buttons, layout, opacity, heroBgColor, heroTextColor } = props;
+  const { image, buttons, layout, opacity, heroBgColor, heroTextColor, content } = props;
 
   const textColorStyle = heroTextColor ? { color: heroTextColor.hex } : {};
   const bgColorStyle = heroBgColor ? { backgroundColor: heroBgColor.hex } : {};
@@ -17,12 +16,12 @@ const HeroSection = (props: IHero) => {
           key={`${props._key}-image-bg-center`}
           className="relative flex aspect-square max-h-screen w-full items-center justify-center sm:h-[700px]"
           style={bgColorStyle}>
-          <div className="absolute left-0 top-0 z-10 h-full w-full">
-            {image && <Image source={image} width={1425} aspect={16/9} className="h-full w-full object-cover" alt="" opacity={imageOpacity}  />}
+          <div className="absolute left-0 top-0 z-10 h-full w-full" style={{ opacity: imageOpacity }}>
+          {image && image.asset && image.asset.url && <Image src={image.asset.url} fill={true} quality={90} placeholder='blur' loading='lazy' blurDataURL={image.asset.url} className="h-full w-full object-cover" alt="" />}
           </div>
           <div className="absolute left-0 top-0 z-20 h-full w-full "></div>
           <div className="z-30 max-w-3xl px-4 text-center" style={textColorStyle}>
-            <BlockContentRenderer blockContent={blockContent && blockContent} />
+            <Content content={content} />
             <div className="mb-2 mt-6 flex h-full flex-wrap items-center justify-center">
               {buttons && buttons.map(btn => <ButtonRenderer key={`${layout}-${btn.callToAction}`} {...btn} />)}
             </div>
@@ -35,12 +34,12 @@ const HeroSection = (props: IHero) => {
           key={`${props._key}-image-bg-center`}
           className="relative flex w-full items-center justify-center h-[300px] sm:h-[400px] md:h-[500px] bg-accent"
           style={bgColorStyle}>
-          <div className="absolute left-0 top-0 z-10 h-full w-full">
-            {image && <Image source={image} width={0} className="h-full w-full object-cover" alt="" opacity={imageOpacity}  />}
+          <div className="absolute left-0 top-0 z-10 h-full w-full" style={{ opacity: imageOpacity }}>
+          {image && image.asset && image.asset.url && <Image src={image.asset.url} fill={true} quality={90} placeholder='blur' loading='lazy' blurDataURL={image.asset.url} className="h-full w-full object-cover" alt="" />}
           </div>
           <div className="absolute left-0 top-0 z-20 h-full w-full "></div>
           <div className="z-30 max-w-3xl px-4 text-center sm:-mt-20" style={textColorStyle}>
-            <BlockContentRenderer blockContent={blockContent && blockContent} />
+            <Content content={content} />
             <div className="mb-2 mt-4 flex h-full flex-wrap items-center justify-center">
               {buttons && buttons.map(btn => <ButtonRenderer key={`${layout}-${btn.callToAction}`} {...btn} />)}
             </div>
@@ -54,13 +53,13 @@ const HeroSection = (props: IHero) => {
             <div
               className="flex flex-col items-center justify-center text-center md:items-start md:text-left"
               style={textColorStyle}>
-              <BlockContentRenderer blockContent={blockContent && blockContent} />
+              <Content content={content} />
               <div className="mt-6 flex flex-shrink items-center justify-center space-x-4 md:-ml-2 md:justify-start">
                 {buttons && buttons.map(btn => <ButtonRenderer key={`${layout}-${btn.callToAction}`} {...btn} />)}
               </div>
             </div>
-            <div className="hidden md:flex justify-center mx-8 h-2/5 bg-black rounded-lg">
-              {image && <Image source={image} width={680} className="rounded-lg shadow-gray-500 shadow-md object-cover" alt=""  />}
+            <div className="hidden md:flex justify-center mx-8 h-2/5" style={{ opacity: imageOpacity }}>
+            {image && image.asset && image.asset.url && <Image src={image.asset.url} width={544} height={544} quality={90} placeholder='blur' loading='lazy' blurDataURL={image.asset.url} className="h-full w-full rounded-lg object-cover shadow-md shadow-gray-500" alt="" />}
             </div>
           </div>
         </section>
@@ -69,13 +68,13 @@ const HeroSection = (props: IHero) => {
       return (
         <section className="relative md:pb-8" style={bgColorStyle}>
           <div className="mx-auto grid max-w-7xl grid-cols-1 px-4 gap-8 md:grid-cols-3 lg:py-16">
-          <div className="hidden md:block aspect-square">
-              {image && <Image source={image} width={384} aspect={1/1} className="border-2 border-black shadow-lg rounded-full object-cover" alt="alt" opacity={imageOpacity}  />}
+          <div className="hidden md:block aspect-square" style={{ opacity: imageOpacity }}>
+          {image && image.asset && image.asset.url && <Image src={image.asset.url} width={380} height={380} quality={90} placeholder='blur' loading='lazy' blurDataURL={image.asset.url} className="h-full w-full rounded-full border-2 shadow-md shadow-gray-500 border-black object-cover" alt="" />}
             </div>
             <div
               className="flex col-span-2 flex-col items-center justify-center text-center md:items-start md:text-left"
               style={textColorStyle}>
-              <BlockContentRenderer blockContent={blockContent && blockContent} />
+            <Content content={content} />
               <div className="mt-6 flex flex-shrink items-center justify-center space-x-4 md:-ml-2 md:justify-start">
                 {buttons && buttons.map(btn => <ButtonRenderer key={`${layout}-${btn.callToAction}`} {...btn} />)}
               </div>

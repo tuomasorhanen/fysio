@@ -8,11 +8,12 @@ const textContent = defineField({
   icon: TbHeading,
   fields: [
     {
-      name: 'blockContent',
-      title: 'Block Content',
-      type: 'array',
-      of: [{ type: 'blockContent' }],
-      validation: Rule => [Rule.required().error('content is required.')],
+      name: "content",
+      title: "Content",
+      type: "array",
+      of: [
+        { type: "block" },
+      ]
     },
     {
       name: 'style',

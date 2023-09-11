@@ -27,7 +27,6 @@ const processButtons = async cnt => {
           navigateToPage,
           linkType,
           navigateToUrl,
-          image,
           backgroundColor,
           textColor,
           customColor,
@@ -35,6 +34,11 @@ const processButtons = async cnt => {
           buttonContent,
           border,
           borderColor,
+          image{
+            asset->{
+              url
+          }
+          }
         }`;
         const ctaResult = await client.fetch(ctaQuery);
         const {

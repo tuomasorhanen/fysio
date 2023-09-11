@@ -51,8 +51,19 @@ export const getServerSideProps: GetServerSideProps<IPageProps> = async context 
   let { slug } = context.query;
 
   const pageQuery = groq`
-    *[_type == 'page' && slug.current == '${slug}'][0]
-  `;
+  *[_type == 'page' && slug.current == '${slug}']{
+    ...,
+    content[]{
+      ...,
+      image{
+      asset->{
+        url
+      },
+    }
+    },
+  }[0]
+`;
+
 
   let pageResponse = await client.fetch(pageQuery);
 
@@ -70,7 +81,14 @@ export const getServerSideProps: GetServerSideProps<IPageProps> = async context 
     title,
   } | order(menuOrder asc)`;
   const siteSettingsQuery = groq`
-  *[_type == 'siteSettings'][0]
+  *[_type == 'siteSettings'][0]{
+  ...,
+      logo{
+        asset->{
+          url
+        }
+      }
+  }
 `;
 
   let [menuResponse, siteSettingsResponse] = await Promise.all([

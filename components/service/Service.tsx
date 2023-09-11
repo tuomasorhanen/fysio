@@ -1,20 +1,19 @@
+import { Content } from 'components/Content';
 import { IService } from '../../_lib/types';
-import Image from '../../components/Image';
-import BlockContentRenderer from 'components/BlockContentRenderer';
-
+import Image from 'next/image';
 const Service = (props: IService) => {
-  const { description, title, slug, duration, mainImage, _type, price, _key, _id, specification } = props;
+  const { title, duration, mainImage, price, _key, specification, content } = props;
   return (
     <>
      <div
           key={`${props._key}-image-bg-center`}
           className="relative flex aspect-square max-h-screen w-full items-center justify-center sm:h-[700px]">
           <div className="absolute left-0 top-0 z-10 h-full w-full bg-black">
-          {mainImage && <Image source={mainImage} width={1425} aspect={16/9} className="h-full w-full object-cover" alt="" opacity={0.5} />}
+          {mainImage && <Image src={mainImage.asset.url} fill={true} quality={90} placeholder='blur' blurDataURL={mainImage.asset.url} className="h-full w-full object-cover opacity-50" alt="" />}
           </div>
           <div className="absolute left-0 top-0 z-20 h-full w-full "></div>
-          <h2 className="z-30 max-w-3xl px-4 pb-2 font-heading text-3xl sm:text-4xl md:text-5xl text-center text-white">{title}
-          </h2>
+          <div className="z-30 max-w-3xl px-4 pb-2 font-heading text-3xl sm:text-4xl md:text-5xl text-center text-white">{title}
+          </div>
         </div>
         <div key={props._key} className="relative z-10 bg-transparent" style={{ marginTop: '-20.1%' }}>
           <svg viewBox="0 0 1440 320" style={{ position: 'absolute', top: 0, left: 0 }}>
@@ -38,7 +37,7 @@ const Service = (props: IService) => {
         </div>
 
       <div className="p-4 pb-16">
-      <BlockContentRenderer blockContent={description && description} />
+      <Content content={content} />
 
       </div>
     </div>

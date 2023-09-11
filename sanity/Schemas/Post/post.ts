@@ -23,13 +23,14 @@ export default defineType({
                 maxLength: 96,
             },
         }),
-        defineField({
-            name: 'description',
-            title: 'Description',
-            description: 'Add a description of your post.',
-            type: 'array',
-            of: [{ type: 'blockContent' }],
-        }),
+        {
+            name: "content",
+            title: "Content",
+            type: "array",
+            of: [
+              { type: "block" },
+            ]
+          },
         defineField({
             name: 'mainImage',
             title: 'Main image',

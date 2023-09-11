@@ -7,10 +7,12 @@ const Hero = {
   icon: GiNinjaHeroicStance,
   fields: [
     {
-      name: 'blockContent',
-      title: 'Block Content',
-      type: 'array',
-      of: [{ type: 'blockContent' }],
+      name: "content",
+      title: "Content",
+      type: "array",
+      of: [
+        { type: "block" },
+      ]
     },
     {
       name: 'image',

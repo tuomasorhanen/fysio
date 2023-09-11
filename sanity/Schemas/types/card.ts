@@ -19,11 +19,12 @@ const Card = defineField({
       },
     },
     {
-      name: 'blockContent',
-      title: 'Block Content',
-      type: 'array',
-      of: [{ type: 'blockContent' }],
-      validation: Rule => [Rule.required().error('Content is required.')],
+      name: "content",
+      title: "Content",
+      type: "array",
+      of: [
+        { type: "block" },
+      ]
     },
     {
       name: 'image',

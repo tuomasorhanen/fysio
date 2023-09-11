@@ -1,8 +1,7 @@
 import Link from 'next/link';
 
 import { ICallToAction } from '../_lib/types';
-import Image from '../components/Image';
-
+import Image from 'next/image';
 const ButtonRenderer = (props: ICallToAction) => {
   const {
     _key,
@@ -45,7 +44,7 @@ const ButtonRenderer = (props: ICallToAction) => {
     return (
       <Link href={navigateToPage || '/etusivu'}>
         {image ? (
-          <Image source={image} width={50} aspect={1/1} alt="" className={`mx-2 object-cover hover:scale-105`} />
+          <Image src={image.asset.url} width={50} height={50} quality={90} placeholder='blur' loading='lazy' blurDataURL={image.asset.url} alt="" className={`mx-2 object-cover hover:scale-105`} />
         ) : (
           <span className={`button`} style={buttonStyle}>
             {callToAction}
@@ -57,8 +56,8 @@ const ButtonRenderer = (props: ICallToAction) => {
     return (
       <a href={navigateToUrl} >
         {image ? (
-          <Image source={image} width={50} aspect={1/1} alt="" className={`mx-2 object-cover hover:scale-105`} />
-        ) : (
+          <Image src={image.asset.url} width={50} height={50} quality={90} placeholder='blur' loading='lazy' blurDataURL={image.asset.url} alt="" className={`mx-2 object-cover hover:scale-105`} />
+          ) : (
           <span className={`button`} style={buttonStyle}>
             {callToAction}
           </span>

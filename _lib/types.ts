@@ -1,9 +1,11 @@
+import { PortableTextBlock } from "sanity";
+
 export type ISiteSettings = {
   accentColor: IColor;
   _id: string;
   title: string;
   description: string;
-  logo: ISanityImage;
+  logo: any;
   textColor: IColor;
   bgColor: IColor;
 };
@@ -33,10 +35,10 @@ export type IService = {
   _type: 'service';
   title: string;
   slug: ISlug;
-  description: any;
+  content: PortableTextBlock[];
   price: number;
   duration: number;
-  mainImage: ISanityImage;
+  mainImage: any;
   specification: string;
 };
 
@@ -56,7 +58,7 @@ export type ICallToAction = {
   navigateToUrl?: string;
   linkType: string;
   buttonContent: string;
-  image?: ISanityImage;
+  image?: any;
   backgroundColor?: string;
   textColor?: string;
   customColor?: boolean;
@@ -71,17 +73,6 @@ export type IUiElement = {
   style: 'wave' | 'wave-two';
 };
 
-export type ISanityImage = {
-  _key: string;
-  _id: string;
-  url: any;
-  _type: string;
-  asset: {
-    url(url: any): unknown;
-    _ref: string;
-    _type: string;
-  };
-};
 
 export type ICustomButton = {
   _id: string;
@@ -93,8 +84,8 @@ export type IHero = {
   _id: string;
   _key: string;
   _type: string;
-  blockContent?: any;
-  image?: ISanityImage;
+  content: PortableTextBlock[];
+  image?: any;
   buttons?: ICallToAction[];
   layout: 'image-bg-center' | 'simple-image-right' | 'circle-left' | 'slim-simple';
   opacity?: number;
@@ -106,8 +97,8 @@ export type ICard = {
   _id: string;
   _key: string;
   _type: string;
-  blockContent: any;
-  image?: ISanityImage;
+  content: PortableTextBlock[];
+  image?: any;
   buttons?: ICallToAction[];
   layout: 'image-top-rounded-full';
 };
@@ -132,7 +123,7 @@ export type IHeadingAndTitle = {
   _id: string;
   _type: string;
   _key: string;
-  blockContent: any;
+  content: PortableTextBlock[];
   style: 'centered' | 'left-aligned';
 };
 
@@ -141,8 +132,8 @@ export type IPost = {
   _key: string;
   title: string;
   slug: ISlug;
-  mainImage: ISanityImage;
-  description: string;
+  mainImage: any;
+  content: PortableTextBlock[];
 };
 
 export type IReference = {

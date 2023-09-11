@@ -3,8 +3,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import { ISiteSettings, ISlug } from '../../_lib/types';
-import Image from '../../components/Image';
-
+import Image from 'next/image';
 export type IMenuItem = {
   name: string;
   slug: ISlug;
@@ -56,7 +55,7 @@ const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
   className={`fixed top-0 z-40 hidden w-full md:block ${navBackground} duration-800 transition delay-300 ease-in-out`}>
   <div className="flex justify-between py-2">
     <Link href="/" className="z-40 flex items-center">
-      <Image source={settings.logo} width={50} alt={settings.title} aspect={1/1} className="mx-10 rounded-full object-contain hover:scale-105" />
+      <Image src={settings.logo.asset.url} width={50} alt={settings.title} quality={90} placeholder='blur' loading='lazy' blurDataURL={settings.logo.asset.url} height={50} className="mx-10 rounded-full object-contain hover:scale-105" />
       <span className='-ml-6 text-xl'>Fysiosarianne</span>
     </Link>
     <div className="z-40 hidden md:block" id="navbar-default">
@@ -84,7 +83,7 @@ const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
       <div className="nav-container">
         <div className="navbar absolute z-50">
           <Link href="/" className="z-40 flex items-center">
-          <Image source={settings.logo} width={50} aspect={1/1} alt={settings.title} className="rounded-full object-contain hover:scale-105" />
+          <Image src={settings.logo.asset.url} width={50} height={50} alt={settings.title} quality={90} placeholder='blur' loading='lazy' blurDataURL={settings.logo.asset.url} className="rounded-full object-contain hover:scale-105" />
           </Link>{' '}
           <div className="menu-toggle" onClick={() => setNavOpen(!navOpen)}>
             <div className={navOpen ? 'hamBox hamBoxOpen' : 'hamBox'}>

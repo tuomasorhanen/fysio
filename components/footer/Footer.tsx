@@ -5,28 +5,28 @@ const MyFooter = () => {
       <div className="mx-auto max-w-5xl px-4 py-8 text-center bg-bg text-text">
         <div className="grid grid-cols-1 sm:grid-cols-3 pb-8 border-b-2 border-accent ">
           <div className='mb-4'>
-            <h3 className="text-lg font-bold "><FaMapMarkerAlt className="inline-block mr-2" />Tampere Lielahti</h3>
-            <p>Kauppakeskus Like</p>
+            <div className="text-lg font-bold "><FaMapMarkerAlt className="inline-block mr-2" />Tampere Lielahti</div>
+            <div>Kauppakeskus Like</div>
             <p>Antti Possin kuja 1</p>
           </div>
           <div className='mb-4'>
-            <h3 className="text-lg font-bold"><FaMapMarkerAlt className="inline-block mr-2" />Pirkkala</h3>
-            <p>Kauppakeskus Veska</p>
-            <p>Saapastie 2</p>
+            <div className="text-lg font-bold"><FaMapMarkerAlt className="inline-block mr-2" />Pirkkala</div>
+            <div>Kauppakeskus Veska</div>
+            <div>Saapastie 2</div>
           </div>
           <div className='mb-4'>
-            <h3 className="text-lg font-bold"><FaMapMarkerAlt className="inline-block mr-2" />Tampere Keskusta</h3>
-            <p>Näsilinnankatu 46</p>
+            <div className="text-lg font-bold"><FaMapMarkerAlt className="inline-block mr-2" />Tampere Keskusta</div>
+            <div>Näsilinnankatu 46</div>
           </div>
           </div>
           <div className="sm:flex justify-center pt-8 ">
           <div className='mx-8 mb-4'>
-            <h3 className="text-lg font-bold "><FaPhone className="inline-block mr-2" />Puhelin</h3>
-            <p>+358 41 5022 403</p>
+            <div className="text-lg font-bold "><FaPhone className="inline-block mr-2" />Puhelin</div>
+            <div>+358 41 5022 403</div>
           </div>
           <div className='mx-8 mb-4'>
-            <h3 className="text-lg font-bold "><FaEnvelope className="inline-block mr-2" />Sähköposti</h3>
-            <p>sari_anne_@hotmail.com</p>
+            <div className="text-lg font-bold "><FaEnvelope className="inline-block mr-2" />Sähköposti</div>
+            <div>sari_anne_@hotmail.com</div>
           </div>
         </div>
       </div>

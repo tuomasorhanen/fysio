@@ -25,7 +25,6 @@ const resolveReferences = async (page: IPage) => {
                     description,
                     price,
                     duration,
-                    mainImage,
                     slug,
                     ...
                   }[0]`;
@@ -43,31 +42,28 @@ const resolveReferences = async (page: IPage) => {
               const { _ref, _type } = gridItem;
               if (_type === 'service' && _ref) {
                 const serviceQry = groq`*[_id == '${_ref}']{
-          _id,
-          title,
-          description,
-          price,
-          duration,
-          mainImage,
-          slug,
-          _type,
-          ...
-        }[0]`;
+                    ...,
+                    mainImage{
+                    asset->{
+                      url
+                    },
+                  },
+                }[0]
+              `;
                 const serviceData = await client.fetch(serviceQry);
 
                 return serviceData;
               }
               else if (_type === 'post' && _ref) {
                 const postQry = groq`*[_id == '${_ref}']{
-          _id,
-          title,
-                  
-          description,
-          mainImage,
-          slug,
-          _type,
-          ...
-        }[0]`;
+                  ...,
+                  mainImage{
+                  asset->{
+                    url
+                  },
+                },
+              }[0]
+            `;
                 const postData = await client.fetch(postQry);
 
                 return postData;
@@ -81,14 +77,14 @@ const resolveReferences = async (page: IPage) => {
           case 'post' :
             if (item._ref && item._type === 'post') {
               const postQry = groq`*[_id == '${item._ref}']{
-                _id,
-                title,
-                description,
-                mainImage,
-                slug,
-                _type,
-                ...
-              }[0]`;
+                ...,
+                mainImage{
+                asset->{
+                  url
+                },
+              },
+            }[0]
+          `;
               const postData = await client.fetch(postQry);
               return postData;
             }
@@ -96,16 +92,14 @@ const resolveReferences = async (page: IPage) => {
             case 'service' :
               if (item._ref && item._type === 'service') {
                 const serviceQry = groq`*[_id == '${item._ref}']{
-                  _id,
-                  title,
-                  description,
-                  price,
-                  duration,
-                  mainImage,
-                  slug,
-                  _type,
-                  ...
-                }[0]`;
+                  ...,
+                  mainImage{
+                  asset->{
+                    url
+                  },
+                },
+              }[0]
+            `;
                 const serviceData = await client.fetch(serviceQry);
                 return serviceData;
               }

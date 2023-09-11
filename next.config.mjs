@@ -5,7 +5,15 @@ const config = {
   swcMinify: true,
   images: {
     unoptimized: false,
-    domains: ['cdn.sanity.io']
+    formats: ['image/avif', 'image/webp'],
+    domains: ['cdn.sanity.io'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+      },
+    ],
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }) => {
     config.cache = true;
