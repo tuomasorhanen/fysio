@@ -35,6 +35,7 @@ const processButtons = async cnt => {
           border,
           borderColor,
           image{
+            alt,
             asset->{
               url
           }

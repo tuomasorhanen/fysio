@@ -14,7 +14,7 @@ const ServiceReferenceSection = (props: IService) => {
             width={590}
             height={236}
             className="absolute w-full h-full object-cover opacity-50" 
-            alt=""
+            alt={mainImage.alt}
           />
         </div>}
       <div className="absolute top-0 right-0 p-2 font-extrabold flex flex-wrap gap-2">

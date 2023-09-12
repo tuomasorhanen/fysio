@@ -12,8 +12,9 @@ export const fetchPageData = async (slug: string | string[]): Promise<IPageProps
     content[]{
       ...,
       image{
+        alt,
       asset->{
-        url
+        url,
       },
     }
     },
@@ -46,6 +47,7 @@ export const fetchSiteSettings = async () => {
     *[_type == 'siteSettings'][0]{
     ...,
         logo{
+          alt,
           asset->{
             url
           }

@@ -44,9 +44,9 @@ const resolveReferences = async (page: IPage) => {
                 const serviceQry = groq`*[_id == '${_ref}']{
                     ...,
                     mainImage{
-                    asset->{
-                      url
-                    },
+                      alt, 
+                      asset->{
+                      url,                    },
                   },
                 }[0]
               `;
@@ -58,9 +58,9 @@ const resolveReferences = async (page: IPage) => {
                 const postQry = groq`*[_id == '${_ref}']{
                   ...,
                   mainImage{
+                    alt,
                   asset->{
-                    url
-                  },
+                    url                  },
                 },
               }[0]
             `;
@@ -79,6 +79,7 @@ const resolveReferences = async (page: IPage) => {
               const postQry = groq`*[_id == '${item._ref}']{
                 ...,
                 mainImage{
+                  alt,
                 asset->{
                   url
                 },
@@ -94,9 +95,9 @@ const resolveReferences = async (page: IPage) => {
                 const serviceQry = groq`*[_id == '${item._ref}']{
                   ...,
                   mainImage{
+                    alt,
                   asset->{
-                    url
-                  },
+                    url                  },
                 },
               }[0]
             `;
