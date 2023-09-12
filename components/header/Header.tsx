@@ -101,7 +101,7 @@ const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
                   onClick={() => setNavOpen(!navOpen)}
                   style={{
                     top: navOpen ? '0' : '120px',
-                    transitionDelay: navOpen ? `${0.8 + index * 0.1}s` : '0s',
+                    transitionDelay: navOpen ? `${0.3 + index * 0.1}s` : '0s',
                   }}>
                   {item.name}
                 </Link>
