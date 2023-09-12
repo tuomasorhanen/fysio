@@ -4,7 +4,7 @@ import Header from 'components/header/Header';
 import MapContent from 'components/MapContent';
 import Footer from 'components/footer/Footer';
 import { IPageProps, IHero } from '../_lib/types';
-import { fetchMenuItems, fetchPageData, fetchSiteSettings } from 'pages/sanity-utils';
+import { fetchMenuItems, fetchPageData, fetchSiteSettings } from '_lib/sanity-utils';
 
 const IndexPage = (props: IPageProps) => {
   const { content, menu, settings, name, description } = props;
