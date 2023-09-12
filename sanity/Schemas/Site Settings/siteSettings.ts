@@ -27,6 +27,16 @@ const siteSettings = defineType({
       title: 'Logo',
       type: 'image',
       description: 'The logo image for the website, displayed in the header and used for branding purposes.',
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'string',
+          options: {
+            isHighlighted: true,
+          },
+        },
+      ],
       validation: Rule => Rule.required(),
     }),
     defineField({

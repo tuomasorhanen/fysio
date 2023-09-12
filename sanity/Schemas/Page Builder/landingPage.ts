@@ -73,6 +73,16 @@ export default {
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'string',
+          options: {
+            isHighlighted: true,
+          },
+        },
+      ],
       hidden: ({ parent }) => parent?.buttonContent !== 'image',
     },
     {

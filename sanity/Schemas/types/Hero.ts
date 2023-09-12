@@ -21,6 +21,16 @@ const Hero = {
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'string',
+          options: {
+            isHighlighted: true,
+          },
+        },
+      ],
     },
     {
       name: 'layout',

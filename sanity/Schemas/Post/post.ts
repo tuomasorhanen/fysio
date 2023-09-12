@@ -39,6 +39,16 @@ export default defineType({
             options: {
                 hotspot: true,
             },
+            fields: [
+                {
+                  name: 'alt',
+                  title: 'Alt Text',
+                  type: 'string',
+                  options: {
+                    isHighlighted: true,
+                  },
+                },
+              ],
         }),
     ],
 });
