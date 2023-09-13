@@ -67,6 +67,20 @@ const Page = {
       type: 'number',
     }),
     defineField({
+      name: 'menuColor',
+      title: 'Menu text color',
+      description: 'Choose the color for your menu texts',
+      type: 'string',
+      initialValue: 'text',
+      options: {
+        list: [
+          { title: 'Background', value: 'background' },
+          { title: 'Text', value: 'text' },
+          { title: 'Accent', value: 'accent' },
+        ],
+      },
+    }),    
+    defineField({
       name: 'content',
       title: 'Content',
       type: 'array',

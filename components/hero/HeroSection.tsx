@@ -47,7 +47,7 @@ return (
               </nav>
             </div>
             <div className="hidden md:flex justify-center mx-8 h-2/5" style={{ opacity: imageOpacity }}>
-            {image && image.asset && image.asset.url && <Image src={image?.asset?.url} width={544} height={544} quality={90} placeholder='blur' loading='lazy' blurDataURL={image?.asset?.url} className="h-full w-full rounded-lg object-cover shadow-md shadow-gray-500" alt={image?.alt} />}
+            {image && image.asset && image.asset.url && <Image src={image?.asset?.url} width={544} height={544} quality={90} placeholder='blur' loading='lazy' blurDataURL={image?.asset?.url} className="h-full w-full rounded-lg object-cover myShadow" alt={image?.alt} />}
             </div>
           </div>
         </section>
@@ -57,7 +57,7 @@ return (
         <section key={props._key} className="relative md:pb-8" style={bgColorStyle}>
           <div className="mx-auto grid max-w-7xl grid-cols-1 px-4 gap-8 md:grid-cols-3 lg:py-16">
             <div className="hidden md:block aspect-square" style={{ opacity: imageOpacity }}>
-            {image && image.asset && image.asset.url && <Image src={image?.asset?.url} width={380} height={380} quality={90} placeholder='blur' loading='lazy' blurDataURL={image?.asset?.url} className="h-full w-full rounded-full border-2 shadow-md shadow-gray-500 border-black object-cover" alt={image?.alt} /> }
+            {image && image.asset && image.asset.url && <Image src={image?.asset?.url} width={380} height={380} quality={90} placeholder='blur' loading='lazy' blurDataURL={image?.asset?.url} className="h-full w-full rounded-full border-black border-2 myShadow object-cover" alt={image?.alt} /> }
             </div>
             <div className="flex col-span-2 flex-col items-center justify-center text-center md:items-start md:text-left" style={textColorStyle}>
               <Content content={content} />

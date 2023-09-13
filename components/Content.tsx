@@ -22,7 +22,7 @@ const myPortableTextComponents = {
           height={248.43}
           quality={90}
           loading="lazy"
-          className="rounded-lg shadow-md shadow-gray-500"
+          className="rounded-lg myShadow"
 
         />
         </div>

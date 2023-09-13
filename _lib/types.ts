@@ -15,6 +15,12 @@ export type IColor = {
   hex: string;
 };
 
+export type IMenuProps = {
+  items: IMenuItem[];
+  _key?: string;
+  heroBgColor?: string;
+};
+
 export type ISpacer = {
   _key: string;
   Size: 'small' | 'medium' | 'large';
@@ -26,6 +32,7 @@ export type IPage = {
   _type: 'page';
   name: string;
   menuOrder?: number;
+  menuColor?: string;
   content?: IHeadingAndTitle[] | IHero[] | IGrid[] | IUiElement[] | IService[] | IPost[];
 };
 

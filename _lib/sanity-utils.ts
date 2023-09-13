@@ -2,6 +2,7 @@ import { client } from '_lib/client';
 import resolveLinks from '_lib/resolveLinks';
 import resolveReferences from '_lib/resolvers/resolveReferences';
 import { IMenuItem, IPageProps } from '_lib/types';
+import { GetServerSidePropsContext } from 'next';
 import { groq } from 'next-sanity';
 
 
@@ -54,5 +55,26 @@ export const fetchSiteSettings = async () => {
         }
     }
   `;
+
   return await client.fetch(siteSettingsQuery);
 };
+
+export async function fetchPageProps(context: GetServerSidePropsContext): Promise<{ props: IPageProps }> {
+  context.res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=7200');
+  const slug = context.query.slug || 'etusivu';
+
+  const pageResponse = await fetchPageData(slug);
+  if (!pageResponse) {
+    return { props: { notFound: true } as any };
+  }
+
+  const [menuResponse, siteSettingsResponse] = await Promise.all([fetchMenuItems(), fetchSiteSettings()]);
+
+  return {
+    props: {
+      ...pageResponse,
+      menu: menuResponse,
+      settings: siteSettingsResponse,
+    },
+  };
+}
