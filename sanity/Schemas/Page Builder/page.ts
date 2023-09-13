@@ -113,6 +113,11 @@ const Page = {
       by: [{ field: 'menuOrder', direction: 'asc' }],
     },
   ],
+  preview: {
+    select: {
+      title: 'name',
+    },
+  },
 };
 
 export default Page;
