@@ -29,11 +29,12 @@ const Header = ({ items, settings }: IMenuProps & { settings: ISiteSettings }) =
           <Image
             src={settings.logo.asset.url}
             width={50}
-            alt={settings.logo.alt}
-            quality={90}
-            placeholder="empty"
             height={50}
-            className="mx-10 rounded-full object-contain hover:scale-105"
+            placeholder="empty"
+            priority
+            alt={settings.logo.alt}
+            style={{ objectFit: 'contain' }}
+            className="mx-10 rounded-full hover:scale-105"
           />
           <span className="-ml-6 text-xl">Fysiosarianne</span>
         </Link>
@@ -61,16 +62,16 @@ const Header = ({ items, settings }: IMenuProps & { settings: ISiteSettings }) =
       <div className="nav-container">
         <div className="navbar absolute z-50">
           <Link href="/" className="z-40 flex items-center">
-            <Image
-              src={settings.logo.asset.url}
-              width={50}
-              height={50}
-              alt={settings.logo.alt}
-              quality={90}
-              placeholder="empty"
-              loading="lazy"
-              className="rounded-full object-contain hover:scale-105"
-            />
+          <Image
+            src={settings.logo.asset.url}
+            width={50}
+            height={50}
+            placeholder="empty"
+            priority
+            alt={settings.logo.alt}
+            style={{ objectFit: 'contain' }}
+            className="mx-10 rounded-full hover:scale-105"
+          />
           </Link>{' '}
           <div className="menu-toggle" onClick={() => setNavOpen(!navOpen)}>
             <div className={navOpen ? 'hamBox hamBoxOpen' : 'hamBox'}>

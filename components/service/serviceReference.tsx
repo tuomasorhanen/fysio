@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { IService } from '../../_lib/types';
 import Image from 'next/image';
+import { blurred } from '_lib/sanity-utils';
 
 const ServiceReferenceSection = (props: IService) => {
   const {title, slug, duration, mainImage, price, _key, specification } = props;
@@ -9,13 +10,8 @@ const ServiceReferenceSection = (props: IService) => {
     <section key={_key} className="borderstyle rounded-lg shadow-lg overflow-hidden relative bg-black">
       {mainImage && 
         <div className="relative w-full" style={{ paddingBottom: '40%' }}>
-          <Image 
-            src={mainImage.asset.url} 
-            width={590}
-            height={236}
-            className="absolute w-full h-full object-cover opacity-50" 
-            alt={mainImage.alt}
-          />
+      {mainImage && <Image src={mainImage.asset.url} fill={true} placeholder='blur' blurDataURL={blurred} priority alt={mainImage.alt} style={{objectFit: 'cover'}} />}
+
         </div>}
       <div className="absolute top-0 right-0 p-2 font-extrabold flex flex-wrap gap-2">
         {Array.isArray(price) && Array.isArray(duration) && price.map((p, index) => (

@@ -44,7 +44,7 @@ const ButtonRenderer = (props: ICallToAction) => {
     return (
       <Link href={navigateToPage || '/etusivu'}>
         {image ? (
-          <Image src={image.asset.url} width={50} height={50} quality={90} placeholder='blur' loading='lazy' blurDataURL={image.asset.url} alt={image.alt} className={`mx-2 object-cover hover:scale-105`} />
+          <Image src={image.asset.url} width={50} height={50} placeholder='empty' alt={image.alt} priority style={{objectFit: 'cover'}} className={`mx-2 hover:scale-105`} />
         ) : (
           <span className={`button`} style={buttonStyle}>
             {callToAction}
@@ -56,7 +56,7 @@ const ButtonRenderer = (props: ICallToAction) => {
     return (
       <a href={navigateToUrl} >
         {image ? (
-          <Image src={image.asset.url} width={50} height={50} quality={90} placeholder='blur' loading='lazy' blurDataURL={image.asset.url} alt={image.alt} className={`mx-2 object-cover hover:scale-105`} />
+          <Image src={image.asset.url} width={50} height={50} placeholder='empty' alt={image.alt} priority style={{objectFit: 'cover'}} className={`mx-2 hover:scale-105`} />
           ) : (
           <span className={`button`} style={buttonStyle}>
             {callToAction}
