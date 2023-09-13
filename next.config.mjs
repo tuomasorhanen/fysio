@@ -8,7 +8,6 @@ const config = {
     unoptimized: false,
     formats: ['image/avif', 'image/webp'],
     domains: ['cdn.sanity.io'],
-    quality: 90,
     remotePatterns: [
       {
         protocol: 'https',

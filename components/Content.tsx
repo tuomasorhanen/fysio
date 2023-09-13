@@ -22,6 +22,7 @@ const myPortableTextComponents = {
               height={248.43}
               placeholder="blur"
               blurDataURL={blurred}
+              quality={90}
               priority
               alt={value.alt}
               style={{ objectFit: 'cover' }}

@@ -70,7 +70,7 @@ const Header = ({ items, settings }: IMenuProps & { settings: ISiteSettings }) =
             priority
             alt={settings.logo.alt}
             style={{ objectFit: 'contain' }}
-            className="mx-10 rounded-full hover:scale-105"
+            className="rounded-full hover:scale-105"
           />
           </Link>{' '}
           <div className="menu-toggle" onClick={() => setNavOpen(!navOpen)}>

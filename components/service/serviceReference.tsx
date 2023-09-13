@@ -10,7 +10,8 @@ const ServiceReferenceSection = (props: IService) => {
     <section key={_key} className="borderstyle rounded-lg shadow-lg overflow-hidden relative bg-black">
       {mainImage && 
         <div className="relative w-full" style={{ paddingBottom: '40%' }}>
-      {mainImage && <Image src={mainImage.asset.url} fill={true} placeholder='blur' blurDataURL={blurred} priority alt={mainImage.alt} style={{objectFit: 'cover'}} />}
+      {mainImage && <Image src={mainImage.asset.url} fill={true} placeholder='blur' blurDataURL={blurred}               quality={90}
+ priority alt={mainImage.alt} style={{objectFit: 'cover'}} />}
 
         </div>}
       <div className="absolute top-0 right-0 p-2 font-extrabold flex flex-wrap gap-2">

@@ -24,6 +24,7 @@ const HeroSection = (props: IHero) => {
               fill={true}
               placeholder="blur"
               blurDataURL={blurred}
+              quality={90}
               priority
               alt={image?.alt}
               style={{ opacity: imageOpacity, objectFit: 'cover' }}
@@ -51,6 +52,7 @@ const HeroSection = (props: IHero) => {
               fill={true}
               placeholder="blur"
               blurDataURL={blurred}
+              quality={90}
               priority
               alt={image?.alt}
               style={{ opacity: imageOpacity, objectFit: 'cover' }}
@@ -89,6 +91,7 @@ const HeroSection = (props: IHero) => {
                   height={544}
                   placeholder="blur"
                   blurDataURL={blurred}
+                  quality={90}
                   priority
                   alt={image?.alt}
                   style={{ opacity: imageOpacity, objectFit: 'cover' }}
@@ -111,6 +114,7 @@ const HeroSection = (props: IHero) => {
                   height={380}
                   placeholder="blur"
                   blurDataURL={blurred}
+                  quality={90}
                   priority
                   alt={image?.alt}
                   style={{ opacity: imageOpacity, objectFit: 'cover' }}
