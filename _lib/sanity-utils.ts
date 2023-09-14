@@ -1,9 +1,9 @@
-import { client } from '_lib/client';
 import resolveLinks from '_lib/resolveLinks';
 import resolveReferences from '_lib/resolvers/resolveReferences';
 import { IMenuItem, IPageProps } from '_lib/types';
 import { GetServerSidePropsContext } from 'next';
 import { groq } from 'next-sanity';
+import { client } from './client';
 
 
 export const fetchPageData = async (slug: string | string[]): Promise<IPageProps | null> => {

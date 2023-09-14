@@ -102,7 +102,7 @@ line-height: 1;
 }
 @layer components {
   .myShadow {
-    @apply shadow-[#6b7280] shadow-md
+    @apply shadow-gray-500 shadow-md
   }
   .button {
     @apply relative mx-2 inline-block rounded-full px-2 py-2 text-xs myShadow hover:scale-105 sm:px-4 sm:text-xl;

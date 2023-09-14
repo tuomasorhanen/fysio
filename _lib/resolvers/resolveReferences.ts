@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity';
-import { client } from '../../sanity/lib/client';
 import { IPage } from '_lib/types';
+import { client } from '_lib/client';
 
 const resolveReferences = async (page: IPage) => {
   const { content } = page;
