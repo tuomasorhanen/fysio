@@ -32,9 +32,6 @@ const siteSettings = defineType({
           name: 'alt',
           title: 'Alt Text',
           type: 'string',
-          options: {
-            isHighlighted: true,
-          },
         },
       ],
       validation: Rule => Rule.required(),

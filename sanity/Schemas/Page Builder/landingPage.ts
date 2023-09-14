@@ -78,9 +78,6 @@ export default {
           name: 'alt',
           title: 'Alt Text',
           type: 'string',
-          options: {
-            isHighlighted: true,
-          },
         },
       ],
       hidden: ({ parent }) => parent?.buttonContent !== 'image',

@@ -26,9 +26,6 @@ const Hero = {
           name: 'alt',
           title: 'Alt Text',
           type: 'string',
-          options: {
-            isHighlighted: true,
-          },
         },
       ],
     },
