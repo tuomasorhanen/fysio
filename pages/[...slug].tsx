@@ -6,7 +6,7 @@ import { IPageProps } from '../_lib/types';
 import { fetchPageProps } from '_lib/sanity-utils';
 
 const IndexPage = (props: IPageProps) => {
-  const { content, menu, settings, name, description, title } = props;
+  const { content, menu, settings, description, title } = props;
 
   return (
     <>
