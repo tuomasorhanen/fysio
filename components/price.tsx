@@ -5,7 +5,7 @@ const Pricing = (props: IPrice) => {
   const { service } = props;
 
   return (
-    <div className="mx-auto mt-8 max-w-5xl">
+    <section className="mx-auto mt-8 max-w-5xl">
       <span className='px-4 text-lg font-bold'>Hieronta</span>
 
       {service.map((service: IService) => (
@@ -18,7 +18,7 @@ const Pricing = (props: IPrice) => {
           </div>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

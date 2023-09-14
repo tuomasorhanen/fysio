@@ -9,19 +9,19 @@ const HeadingAndTitle = (props: IHeadingAndTitle) => {
   switch (style) {
     case 'centered':
       return (
-        <div key={props._key} className="py-8 md:py-16 ">
+        <section key={props._key} className="py-8 md:py-16 ">
           <div className="mx-auto max-w-4xl px-4 text-center">
           <Content content={content} />
           </div>
-        </div>
+        </section>
       );
     case 'left-aligned':
       return (
-        <div key={props._key} className="py-8 md:py-16 ">
+        <section key={props._key} className="py-8 md:py-16 ">
           <div className="mx-auto max-w-4xl px-4">
           <Content content={content} />
           </div>
-        </div>
+        </section>
       );
     default:
       return <></>;

@@ -58,7 +58,7 @@ const Header = ({ items, settings }: IMenuProps & { settings: ISiteSettings }) =
   );
 
   const renderMobileNav = () => (
-    <div className="nav z-40 md:hidden">
+    <nav className="nav z-40 md:hidden">
       <div className="nav-container">
         <div className="navbar absolute z-50">
           <Link href="/" className="z-40 flex items-center">
@@ -106,7 +106,7 @@ const Header = ({ items, settings }: IMenuProps & { settings: ISiteSettings }) =
           </ul>
         </div>
       </div>
-    </div>
+    </nav>
   );
 
   return (

@@ -1,4 +1,4 @@
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt} from 'react-icons/fa';
 
 const InfoBlock = ({ icon: Icon, title, items }) => (
   <div className='mb-4'>
@@ -11,7 +11,7 @@ const InfoBlock = ({ icon: Icon, title, items }) => (
 );
 
 const MyFooter = () => (
-  <div className="mx-auto max-w-5xl px-4 py-8 text-center bg-bg text-text">
+  <section className="mx-auto max-w-5xl px-4 py-8 text-center bg-bg text-text">
     <div className="grid grid-cols-1 sm:grid-cols-3 pb-8 border-b-2 border-accent ">
       <InfoBlock
         icon={FaMapMarkerAlt}
@@ -41,7 +41,7 @@ const MyFooter = () => (
         items={["sari_anne_@hotmail.com"]}
       />
     </div>
-  </div>
+  </section>
 );
 
 export default MyFooter;
