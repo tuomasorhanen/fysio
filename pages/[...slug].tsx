@@ -4,13 +4,11 @@ import MapContent from 'components/MapContent';
 import Footer from 'components/footer/Footer';
 import { IPageProps } from '../_lib/types';
 import { fetchPageProps } from '_lib/sanity-utils';
-import { NOTFOUND } from 'dns';
 import Link from 'next/link';
 
 const IndexPage = (props: IPageProps) => {
   const { content, menu, settings, description, title, notFound, menuColor } = props;
 
-  console.log('menuColor', menuColor);
   if (notFound) {
     return <div className='h-screen flex flex-col justify-center items-center'>
       <h1 className='font-medium'>404 Page not Found</h1>

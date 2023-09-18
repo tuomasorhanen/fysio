@@ -43,8 +43,8 @@ export type IService = {
   title: string;
   slug: ISlug;
   content: PortableTextBlock[];
-  price: number;
-  duration: number;
+  price: number[];
+  duration: number[];
   mainImage: any;
   specification: string;
 };

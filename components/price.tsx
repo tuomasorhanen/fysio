@@ -6,20 +6,23 @@ const Pricing = (props: IPrice) => {
 
   return (
     <section className="mx-auto mt-8 max-w-5xl">
-      <span className='px-4 text-lg font-bold'>Hieronta</span>
-
       {service.map((service: IService) => (
         <div key={service._key} className="flex items-center justify-between border-b border-gray-300 px-4 py-2">
           <div>
-            <div>{service.title} - {service.duration} min</div>
+            <div>
+              {service.title} | {service.duration.length > 1 ? service.duration.join(' - ') : service.duration[0]} min
+            </div>
           </div>
           <div className="flex items-center">
-            <span className="text-lg font-bold px-4">{service.price}€</span>
+            <span className="text-lg font-bold px-4">
+              {service.price.length > 1 ? service.price.join(' - ') : service.price[0]}€
+            </span>
           </div>
         </div>
       ))}
     </section>
   );
 };
+
 
 export default Pricing;
