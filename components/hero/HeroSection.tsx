@@ -16,7 +16,7 @@ const HeroSection = (props: IHero) => {
       return (
         <section
           key={`${props._key}-image-bg-center`}
-          className="relative flex aspect-square max-h-screen w-full items-center justify-center sm:h-[700px]"
+          className="relative flex h-[450px] w-full items-center justify-center bg-accent sm:h-[700px]"
           style={bgColorStyle}>
           {image && image.asset && image.asset.url && (
             <Image
