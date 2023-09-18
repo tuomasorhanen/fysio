@@ -5,8 +5,6 @@ import ButtonRenderer from '../../components/ButtonRenderer';
 const CustomButton = (props: ICustomButton) => {
   const { buttons, layout } = props;
 
-  let alignment;
-
   switch (layout) {
     case 'center':
       return (

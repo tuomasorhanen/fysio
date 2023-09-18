@@ -7,8 +7,6 @@ import { blurred } from '_lib/sanity-utils';
 const Post = (props: IPost) => {
   const { title, mainImage, content} = props;
 
-  console.log(props)
-
   return (
     <>
      <section
