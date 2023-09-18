@@ -121,6 +121,8 @@ export type IPageProps = {
   content: IHero[] | IHeadingAndTitle[] | IService[];
   menu: IMenuItem[];
   settings: ISiteSettings;
+  menuColor?: string;
+  notFound: boolean;
 };
 
 export type IColumns = {

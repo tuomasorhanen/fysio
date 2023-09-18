@@ -67,6 +67,18 @@ const Page = {
       type: 'number',
     }),
     defineField({
+      name: 'menuColor',
+      title: 'Menu color',
+      description: 'Color of the menu item.',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'White', value: 'white' },
+          { title: 'Black', value: 'black' },
+        ],
+      },
+    }),
+    defineField({
       name: 'content',
       title: 'Content',
       type: 'array',
