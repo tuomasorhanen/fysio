@@ -85,6 +85,7 @@ export type ICustomButton = {
   _id: string;
   _key: string;
   buttons: ICallToAction[];
+  layout: 'left' | 'center';
 };
 
 export type IHero = {
