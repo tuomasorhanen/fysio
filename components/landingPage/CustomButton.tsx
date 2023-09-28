@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { ICustomButton } from '../../_lib/types';
 import ButtonRenderer from '../../components/ButtonRenderer';
 
@@ -14,14 +15,13 @@ const CustomButton = (props: ICustomButton) => {
       );
     case 'left':
       return (
-        <nav key={props._key} className={`px-2 max-w-4xl mx-auto h-full items-center -mt-12 pb-12`}>
+        <nav key={props._key} className={`mx-auto -mt-12 h-full max-w-4xl items-center px-2 pb-12`}>
           {buttons && buttons.map(btn => <ButtonRenderer key={btn.callToAction} {...btn} />)}
         </nav>
       );
     default:
-      <></>  }
-
-
+      <></>;
+  }
 };
 
 export default CustomButton;

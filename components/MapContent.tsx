@@ -30,12 +30,12 @@ const MapContent = ({ content }: IMapContentProps) => {
             return <CustomButton key={item._key} {...item} />;
           case 'spacer':
             return <Spacer key={item._key} {...item} />;
-            case 'pricing':
-              return <Pricing key={item._key} {...item} />;
-            case 'service':
-              return <Service key={item._key} {...item} />;
-              case 'post':
-                return <Post key={item._key} {...item} />;
+          case 'pricing':
+            return <Pricing key={item._key} {...item} />;
+          case 'service':
+            return <Service key={item._key} {...item} />;
+          case 'post':
+            return <Post key={item._key} {...item} />;
           default:
             break;
         }

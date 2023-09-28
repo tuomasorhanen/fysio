@@ -7,10 +7,12 @@ import { IMenuProps, ISiteSettings } from '../../_lib/types';
 
 const Header = ({ items, settings, menuColor }: IMenuProps & { settings: ISiteSettings; menuColor?: string }) => {
   const router = useRouter();
-  const [navBackground, setNavBackground] = useState(`bg-transparent ${menuColor === 'black' ? 'text-black' : 'text-white'}`);
+  const [navBackground, setNavBackground] = useState(
+    `bg-transparent ${menuColor === 'black' ? 'text-black' : 'text-white'}`
+  );
   const [navOpen, setNavOpen] = useState(false);
   const [initialLineColor, setInitialLineColor] = useState(menuColor === 'black' ? 'bg-black' : 'bg-white');
-  
+
   useEffect(() => {
     setInitialLineColor(menuColor === 'black' ? 'bg-black' : 'bg-white');
   }, [menuColor]);

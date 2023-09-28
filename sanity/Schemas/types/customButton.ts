@@ -25,7 +25,7 @@ const CustomButton = defineField({
         ],
         layout: 'radio',
       },
-    }
+    },
   ],
   preview: {
     select: {

@@ -1,4 +1,4 @@
-import { PortableTextBlock } from "sanity";
+import { PortableTextBlock } from 'sanity';
 
 export type ISiteSettings = {
   accentColor: IColor;
@@ -53,7 +53,7 @@ export type IPrice = {
   _key: string;
   _id: string;
   _type: 'price';
-  service: IService [];
+  service: IService[];
 };
 
 export type ICallToAction = {
@@ -79,7 +79,6 @@ export type IUiElement = {
   _type: 'uiElement';
   style: 'wave' | 'wave-two';
 };
-
 
 export type ICustomButton = {
   _id: string;
@@ -124,6 +123,9 @@ export type IPageProps = {
   settings: ISiteSettings;
   menuColor?: string;
   notFound: boolean;
+  ogTitle: string;
+  ogDescription: string;
+  ogImage: any;
 };
 
 export type IColumns = {

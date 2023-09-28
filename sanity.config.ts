@@ -6,9 +6,8 @@ import { structure } from './sanity/Schemas/types/structure';
 
 export default defineConfig({
   basePath: '/studio',
-  dataset: "production",
-  projectId: "dg23ndly",
+  dataset: 'production',
+  projectId: 'dg23ndly',
   schema,
-  plugins: [deskTool({ structure }), colorInput()
-],
+  plugins: [deskTool({ structure }), colorInput()],
 });

@@ -14,7 +14,7 @@ const Pricing = (props: IPrice) => {
             </div>
           </div>
           <div className="flex items-center">
-            <span className="text-lg font-bold px-4">
+            <span className="px-4 text-lg font-bold">
               {service.price.length > 1 ? service.price.join(' - ') : service.price[0]}€
             </span>
           </div>
@@ -23,6 +23,5 @@ const Pricing = (props: IPrice) => {
     </section>
   );
 };
-
 
 export default Pricing;

@@ -53,8 +53,7 @@ const resolveReferences = async (page: IPage) => {
                 const serviceData = await client.fetch(serviceQry);
 
                 return serviceData;
-              }
-              else if (_type === 'post' && _ref) {
+              } else if (_type === 'post' && _ref) {
                 const postQry = groq`*[_id == '${_ref}']{
                   ...,
                   mainImage{
@@ -67,16 +66,15 @@ const resolveReferences = async (page: IPage) => {
                 const postData = await client.fetch(postQry);
 
                 return postData;
-              }
-              else {
+              } else {
                 return gridItem;
               }
             })
           );
           break;
-          case 'post' :
-            if (item._ref && item._type === 'post') {
-              const postQry = groq`*[_id == '${item._ref}']{
+        case 'post':
+          if (item._ref && item._type === 'post') {
+            const postQry = groq`*[_id == '${item._ref}']{
                 ...,
                 mainImage{
                   alt,
@@ -86,13 +84,13 @@ const resolveReferences = async (page: IPage) => {
               },
             }[0]
           `;
-              const postData = await client.fetch(postQry);
-              return postData;
-            }
+            const postData = await client.fetch(postQry);
+            return postData;
+          }
 
-            case 'service' :
-              if (item._ref && item._type === 'service') {
-                const serviceQry = groq`*[_id == '${item._ref}']{
+        case 'service':
+          if (item._ref && item._type === 'service') {
+            const serviceQry = groq`*[_id == '${item._ref}']{
                   ...,
                   mainImage{
                     alt,
@@ -101,9 +99,9 @@ const resolveReferences = async (page: IPage) => {
                 },
               }[0]
             `;
-                const serviceData = await client.fetch(serviceQry);
-                return serviceData;
-              }
+            const serviceData = await client.fetch(serviceQry);
+            return serviceData;
+          }
 
         default:
           break;

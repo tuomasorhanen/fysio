@@ -35,9 +35,7 @@ const Page = {
       type: 'string',
       group: 'seo',
       description: 'What shows up as the link text in search engine',
-      validation: Rule => [
-        Rule => Rule.required().error('Title is required.'),
-      ],
+      validation: Rule => [Rule => Rule.required().error('Title is required.')],
     },
     {
       name: 'description',
@@ -45,9 +43,28 @@ const Page = {
       type: 'string',
       group: 'seo',
       description: 'Describe the page for search engines.',
-      validation: Rule => [
-        Rule => Rule.required().error('Title is required.'),
-      ],
+      validation: Rule => [Rule => Rule.required().error('Title is required.')],
+    },
+    {
+      type: 'string',
+      title: 'Open Graph Title',
+      name: 'ogTitle',
+      description:
+        'Set the title Open Graph should use. In most situations, this should be different from the value of the title prop',
+    },
+    {
+      type: 'string',
+      title: 'Open Graph Description',
+      name: 'ogDescription',
+      description:
+        'Set the description Open Graph should use. In most situations, this should be different from the value of the description prop.',
+    },
+    {
+      type: 'image',
+      title: 'Open Graph Image',
+      name: 'ogImage',
+      description:
+        'URL of the image that should be used in social media previews. If you define this, you must define two other OG basic properties as well: title and type.',
     },
     defineField({
       name: 'slug',
@@ -90,18 +107,18 @@ const Page = {
         { type: 'uiElement' },
         { type: 'grid' },
         { type: 'spacer' },
-        { type: 'pricing' }, 
+        { type: 'pricing' },
         {
           name: 'service',
           type: 'reference',
-          to: [{ type: 'service' },],
+          to: [{ type: 'service' }],
         },
         {
           name: 'post',
           type: 'reference',
-          to: [{ type: 'post' },],
+          to: [{ type: 'post' }],
         },
-   ],
+      ],
     }),
   ],
   orderings: [
