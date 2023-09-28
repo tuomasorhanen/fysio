@@ -83,7 +83,7 @@ export type IUiElement = {
 export type ICustomButton = {
   _id: string;
   _key: string;
-  buttons: ICallToAction[];
+  buttons?: ICallToAction[];
   layout: 'left' | 'center';
 };
 
