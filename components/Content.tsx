@@ -1,9 +1,8 @@
-import { blurred } from '_lib/sanity-utils';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 
 type ImageBlock = {
-  asset: string;
+  asset: any;
   alt: string;
 };
 
@@ -21,7 +20,7 @@ const myPortableTextComponents = {
             width={500}
             height={248.43}
             placeholder="blur"
-            blurDataURL={blurred}
+            blurDataURL={value.asset.metadata.lqip}
             quality={90}
             priority
             alt={value.alt}

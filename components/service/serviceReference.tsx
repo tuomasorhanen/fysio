@@ -1,4 +1,3 @@
-import { blurred } from '_lib/sanity-utils';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,17 +7,18 @@ const ServiceReferenceSection = (props: IService) => {
   const { title, slug, duration, mainImage, price, _key, specification } = props;
 
   return (
-    <section key={_key} className="borderstyle relative overflow-hidden rounded-lg bg-black shadow-lg">
+    <section key={title} className="borderstyle relative overflow-hidden rounded-lg bg-black shadow-lg">
       {mainImage && (
         <div className="relative w-full" style={{ paddingBottom: '40%' }}>
           {mainImage && (
             <Image
               src={mainImage.asset.url}
               fill={true}
+              sizes="(max-width: 677px) 100vw, 677px"
               placeholder="blur"
-              blurDataURL={blurred}
+              blurDataURL={mainImage.asset.metadata.lqip}
               quality={90}
-              priority
+              loading="lazy"
               alt={mainImage.alt}
               style={{ objectFit: 'cover' }}
             />
@@ -29,7 +29,7 @@ const ServiceReferenceSection = (props: IService) => {
         {Array.isArray(price) &&
           Array.isArray(duration) &&
           price.map((p, index) => (
-            <div key={_key && index} className="rounded-lg bg-white p-2 opacity-70">
+            <div key={title && index} className="rounded-lg bg-white p-2 opacity-70">
               {specification && <div className="text-sm font-light">{specification[index]}</div>}
               <div>{duration[index]} min</div>
               <div>{p} €</div>

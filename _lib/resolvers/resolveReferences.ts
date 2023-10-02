@@ -45,8 +45,7 @@ const resolveReferences = async (page: IPage) => {
                     ...,
                     mainImage{
                       alt, 
-                      asset->{
-                      url,                    },
+                      asset->
                   },
                 }[0]
               `;
@@ -58,8 +57,7 @@ const resolveReferences = async (page: IPage) => {
                   ...,
                   mainImage{
                     alt,
-                  asset->{
-                    url                  },
+                  asset->
                 },
               }[0]
             `;
@@ -78,9 +76,7 @@ const resolveReferences = async (page: IPage) => {
                 ...,
                 mainImage{
                   alt,
-                asset->{
-                  url
-                },
+                asset->
               },
             }[0]
           `;
@@ -94,8 +90,7 @@ const resolveReferences = async (page: IPage) => {
                   ...,
                   mainImage{
                     alt,
-                  asset->{
-                    url                  },
+                  asset->
                 },
               }[0]
             `;

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { ICustomButton } from '../../_lib/types';
 import ButtonRenderer from '../../components/ButtonRenderer';
 
@@ -18,9 +19,9 @@ const CustomButton = (props: ICustomButton) => {
           {buttons && buttons.map(btn => <ButtonRenderer key={btn.callToAction} {...btn} />)}
         </nav>
       );
-      default:
-        return null;
-    }
+    default:
+      return null;
+  }
 };
 
 export default CustomButton;

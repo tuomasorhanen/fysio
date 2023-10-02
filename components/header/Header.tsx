@@ -46,7 +46,7 @@ const Header = ({ items, settings, menuColor }: IMenuProps & { settings: ISiteSe
 
   const renderDesktopNav = () => (
     <nav
-      key={settings?._id}
+      key="DesktopNav"
       className={`fixed top-0 z-40 hidden w-full md:block ${navBackground} duration-800 transition delay-300 ease-in-out`}>
       <div className="flex justify-between py-2">
         <Link href="/" className="z-40 flex items-center">
@@ -82,7 +82,7 @@ const Header = ({ items, settings, menuColor }: IMenuProps & { settings: ISiteSe
   );
 
   const renderMobileNav = () => (
-    <nav key={settings?._id} className="nav z-40 md:hidden">
+    <nav key="MobileNav" className="nav z-40 md:hidden">
       <div className="nav-container">
         <div className="navbar absolute z-50">
           <Link href="/" className="z-40 flex items-center">

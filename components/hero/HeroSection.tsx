@@ -1,4 +1,3 @@
-import { blurred } from '_lib/sanity-utils';
 import { Content } from 'components/Content';
 import Image from 'next/image';
 
@@ -24,7 +23,7 @@ const HeroSection = (props: IHero) => {
               src={image?.asset?.url}
               fill={true}
               placeholder="blur"
-              blurDataURL={blurred}
+              blurDataURL={image.asset.metadata.lqip}
               quality={90}
               priority
               alt={image?.alt}
@@ -52,7 +51,7 @@ const HeroSection = (props: IHero) => {
               src={image?.asset?.url}
               fill={true}
               placeholder="blur"
-              blurDataURL={blurred}
+              blurDataURL={image.asset.metadata.lqip}
               quality={90}
               priority
               alt={image?.alt}
@@ -91,12 +90,12 @@ const HeroSection = (props: IHero) => {
                   width={544}
                   height={544}
                   placeholder="blur"
-                  blurDataURL={blurred}
+                  loading="lazy"
+                  blurDataURL={image.asset.metadata.lqip}
                   quality={90}
-                  priority
                   alt={image?.alt}
                   style={{ opacity: imageOpacity, objectFit: 'cover' }}
-                  className="myShadow h-full w-full rounded-lg"
+                  className="myShadow rounded-lg"
                 />
               )}
             </div>
@@ -114,7 +113,7 @@ const HeroSection = (props: IHero) => {
                   width={380}
                   height={380}
                   placeholder="blur"
-                  blurDataURL={blurred}
+                  blurDataURL={image.asset.metadata.lqip}
                   quality={90}
                   priority
                   alt={image?.alt}

@@ -1,4 +1,3 @@
-import { blurred } from '_lib/sanity-utils';
 import { Content } from 'components/Content';
 import UiElement from 'components/uIElements/UiElements';
 import Image from 'next/image';
@@ -16,7 +15,7 @@ const Service = (props: IService) => {
             src={mainImage.asset.url}
             fill={true}
             placeholder="blur"
-            blurDataURL={blurred}
+            blurDataURL={mainImage.asset.metadata.lqip}
             quality={90}
             priority
             alt={mainImage.alt}

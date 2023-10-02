@@ -7,7 +7,7 @@ const Pricing = (props: IPrice) => {
   return (
     <section className="mx-auto mt-8 max-w-5xl">
       {service.map((service: IService) => (
-        <div key={service._key} className="flex items-center justify-between border-b border-gray-300 px-4 py-2">
+        <div key={service.title} className="flex items-center justify-between border-b border-gray-300 px-4 py-2">
           <div>
             <div>
               {service.title} | {service.duration.length > 1 ? service.duration.join(' - ') : service.duration[0]} min

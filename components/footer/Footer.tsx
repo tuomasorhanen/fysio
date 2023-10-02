@@ -1,4 +1,4 @@
-import { FaEnvelope, FaMapMarkerAlt,FaPhone } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 
 const InfoBlock = ({ icon: Icon, title, items }) => (
   <div className="mb-4">

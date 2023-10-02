@@ -8,7 +8,8 @@ import Link from 'next/link';
 import { IPageProps } from '../_lib/types';
 
 const IndexPage = (props: IPageProps) => {
-  const { content, menu, settings, description, title, notFound, menuColor, ogTitle, ogDescription, ogImage } = props;
+  const { content, menu, settings, description, title, notFound, menuColor, ogTitle, ogDescription, ogImage, slug } =
+    props;
 
   if (notFound) {
     return (
@@ -27,6 +28,7 @@ const IndexPage = (props: IPageProps) => {
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
+        <link rel="canonical" href={`https://fysiosarianne.fi/${slug.current}`} />
         <meta
           property="og:image"
           content={

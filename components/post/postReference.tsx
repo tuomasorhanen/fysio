@@ -1,4 +1,3 @@
-import { blurred } from '_lib/sanity-utils';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -11,11 +10,13 @@ const PostReferenceSection = (props: IPost) => {
       {mainImage && (
         <Image
           src={mainImage.asset.url}
-          fill={true}
+          width={645}
+          height={158}
+          sizes="(max-width: 640px) 100vw, 640px"
           placeholder="blur"
-          blurDataURL={blurred}
+          blurDataURL={mainImage.asset.metadata.lqip}
+          loading="lazy"
           quality={90}
-          priority
           alt={mainImage.alt}
           style={{ objectFit: 'cover' }}
         />

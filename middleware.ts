@@ -5,6 +5,11 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   if (url.pathname === '/') {
     url.pathname = '/etusivu';
-    return NextResponse.redirect(url);
+    return new NextResponse('Redirecting...', {
+      status: 301,
+      headers: {
+        Location: url.href,
+      },
+    });
   }
 }

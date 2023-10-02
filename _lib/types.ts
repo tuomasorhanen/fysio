@@ -1,4 +1,4 @@
-import { PortableTextBlock } from 'sanity';
+import { PortableTextBlock, Slug } from 'sanity';
 
 export type ISiteSettings = {
   accentColor: IColor;
@@ -126,6 +126,7 @@ export type IPageProps = {
   ogTitle: string;
   ogDescription: string;
   ogImage: any;
+  slug: Slug;
 };
 
 export type IColumns = {
