@@ -1,4 +1,3 @@
 User-agent: *
-Disallow:User-agent: *
 Disallow: /studio/
 Sitemap: https://fysiosarianne.fi/api/sitemap
