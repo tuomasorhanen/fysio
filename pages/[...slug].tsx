@@ -62,8 +62,28 @@ const IndexPage = (props: IPageProps) => {
   );
 };
 
-export const getServerSideProps = async context => {
-  return await fetchPageProps(context);
+export const getStaticProps = async (context) => {
+  const slug = context.params?.slug || 'etusivu';
+  const props = await fetchPageProps(slug);
+
+  return {
+    ...props,
+    revalidate: 3600,
+  };
 };
+
+export async function getStaticPaths() {
+  const slugs = ['etusivu', 'palvelut', 'minusta', 'hinnasto', 'ajanvaraus']; 
+
+  const paths = slugs.map(slug => ({
+    params: { slug: [slug] },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
 
 export default IndexPage;

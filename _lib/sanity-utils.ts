@@ -58,13 +58,10 @@ export const fetchSiteSettings = async () => {
   return await client.fetch(siteSettingsQuery);
 };
 
-export async function fetchPageProps(context: GetServerSidePropsContext): Promise<{ props: IPageProps }> {
-  context.res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=7200');
-  const slug = context.query.slug || 'etusivu';
-
+export async function fetchPageProps(slug: string): Promise<{ props: IPageProps | { notFound: true } }> {
   const pageResponse = await fetchPageData(slug);
-  if (!pageResponse || pageResponse.notFound) {
-    return { props: { notFound: true } as any };
+  if (!pageResponse) {
+    return { props: { notFound: true } };
   }
 
   const [menuResponse, siteSettingsResponse] = await Promise.all([fetchMenuItems(), fetchSiteSettings()]);
@@ -77,3 +74,4 @@ export async function fetchPageProps(context: GetServerSidePropsContext): Promis
     },
   };
 }
+
