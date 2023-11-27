@@ -34,7 +34,7 @@ const myPortableTextComponents = {
 
 export const Content: React.FC<ContentProps> = ({ content }) => {
   return (
-    <div className="">
+    <div className="my-content">
       <PortableText value={content} components={myPortableTextComponents} />
     </div>
   );

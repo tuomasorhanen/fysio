@@ -110,6 +110,9 @@
   .myShadow {
     @apply shadow-md shadow-gray-500;
   }
+  .my-content a {
+    @apply text-blue-500 underline;
+  }
   .button {
     @apply myShadow relative mx-2 inline-block rounded-full px-2 py-2 text-xs hover:scale-105 sm:px-4 sm:text-xl;
     background-color: var(--button-bg-color, var(--bg-color));

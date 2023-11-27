@@ -6,12 +6,14 @@ const PostReferenceSection = (props: IPost) => {
   const { title, slug, mainImage, _key } = props;
 
   return (
-    <section key={_key} className="borderstyle relative h-40 overflow-hidden rounded-lg shadow-lg">
+    <section key={_key} >
+    <Link href={`/${slug.current}`}>
+    <div className="borderstyle relative h-60 overflow-hidden rounded-lg shadow-lg">
       {mainImage && (
         <Image
           src={mainImage.asset.url}
           width={645}
-          height={158}
+          height={238}
           sizes="(max-width: 640px) 100vw, 640px"
           placeholder="blur"
           blurDataURL={mainImage.asset.metadata.lqip}
@@ -22,10 +24,10 @@ const PostReferenceSection = (props: IPost) => {
         />
       )}
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
-        <Link href={`/${slug.current}`}>
           <div className="text-2xl font-bold text-white">{title}</div>
-        </Link>
       </div>
+      </div>
+      </Link>
     </section>
   );
 };
