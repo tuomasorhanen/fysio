@@ -8,7 +8,7 @@ const PostReferenceSection = (props: IPost) => {
   return (
     <section key={_key} >
     <Link href={`/${slug.current}`}>
-    <div className="borderstyle relative h-60 overflow-hidden rounded-lg shadow-lg">
+    <div className="borderstyle relative h-52 overflow-hidden rounded-lg shadow-lg">
       {mainImage && (
         <Image
           src={mainImage.asset.url}
