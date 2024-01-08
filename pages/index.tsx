@@ -7,29 +7,15 @@ import Link from 'next/link';
 
 import { IPageProps } from '../_lib/types';
 
-const IndexPage = (props: IPageProps) => {
-  const { content, menu, settings, description, title, notFound, menuColor, ogTitle, ogDescription, ogImage, slug } =
-    props;
-
-  if (notFound) {
-    return (
-      <div className="flex h-screen flex-col items-center justify-center">
-        <h1 className="font-medium">404 Page not Found</h1>
-        <div className="">
-          <Link href="/" className="button mt-2 border-2 border-text">
-            Etusivu
-          </Link>
-        </div>
-      </div>
-    );
-  }
+const HomePage = (props: IPageProps) => {
+  const { content, menu, settings, description, title, menuColor, ogTitle, ogDescription, ogImage } = props;
 
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <link rel="canonical" href={`https://fysiosarianne.fi/${slug.current}`} />
+        <link rel="canonical" href={`https://fysiosarianne.fi}`} />
         <meta
           property="og:image"
           content={
@@ -49,7 +35,7 @@ const IndexPage = (props: IPageProps) => {
         />
         <meta property="og:title" content={ogTitle || 'Fysiosarianne'} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://fysiosarianne.fi/${slug.current}`} />
+        <meta property="og:url" content={`https://fysiosarianne.fi`} />
         <meta name="robots" content="index, follow" />
       </Head>
       <Header items={menu} settings={settings} menuColor={menuColor} />
@@ -66,9 +52,8 @@ const IndexPage = (props: IPageProps) => {
   );
 };
 
-export const getStaticProps = async context => {
-  const slug = context.params?.slug || 'etusivu';
-  const props = await fetchPageProps(slug);
+export const getStaticProps = async () => {
+  const props = await fetchPageProps('etusivu');
 
   return {
     ...props,
@@ -76,17 +61,4 @@ export const getStaticProps = async context => {
   };
 };
 
-export async function getStaticPaths() {
-  const slugs = ['palvelut', 'minusta', 'hinnasto', 'ajanvaraus'];
-
-  const paths = slugs.map(slug => ({
-    params: { slug: [slug] },
-  }));
-
-  return {
-    paths,
-    fallback: 'blocking',
-  };
-}
-
-export default IndexPage;
+export default HomePage;

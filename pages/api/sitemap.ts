@@ -17,7 +17,13 @@ export default async (req, res) => {
 const createSitemap = pages => {
   return `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url>
+        <loc>https://fysiosarianne.fi/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+      </url>
       ${pages
+        .filter(page => page.slug.current !== 'etusivu')
         .map(page => {
           return `
             <url>
@@ -31,3 +37,4 @@ const createSitemap = pages => {
     </urlset>
   `;
 };
+
